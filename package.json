@@ -1,0 +1,32 @@
+{
+  "name": "ystory",
+  "version": "1.0.0",
+  "description": "연꽃이야기 웹 어플리케이션 프로젝트",
+  "main": "app.js",
+  "scripts": {
+    "test": "Mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hcm07mch/ystory.git"
+  },
+  "keywords": [
+    "happiness"
+  ],
+  "author": "Han Cheolmin",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/hcm07mch/ystory/issues"
+  },
+  "homepage": "https://github.com/hcm07mch/ystory#readme",
+  "dependencies": {
+    "bcrypt": "^5.1.1",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^7.6.3",
+    "nodemailer": "^6.9.7",
+    "passport": "^0.6.0",
+    "passport-local": "^1.0.0"
+  }
+}
