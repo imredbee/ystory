@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/hcm07mch/ystory.git"
+    "url": "git+https://github.com/imredbee/ystory.git"
   },
   "keywords": [
     "happiness"
@@ -16,9 +16,9 @@
   "author": "Han Cheolmin",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/hcm07mch/ystory/issues"
+    "url": "https://github.com/imredbee/ystory/issues"
   },
-  "homepage": "https://github.com/hcm07mch/ystory#readme",
+  "homepage": "https://github.com/imredbee/ystory#readme",
   "dependencies": {
     "bcrypt": "^5.1.1",
     "dotenv": "^16.3.1",
@@ -27,6 +27,7 @@
     "mongoose": "^7.6.3",
     "nodemailer": "^6.9.7",
     "passport": "^0.6.0",
-    "passport-local": "^1.0.0"
+    "passport-local": "^1.0.0",
+    "standard": "^17.1.0"
   }
 }
