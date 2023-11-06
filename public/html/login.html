@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
+        <title></title>
+        <link rel="stylesheet" href="../common/css/default.css" />
+        <link rel="stylesheet" href="../common/css/aos.css" />
+        <link rel="stylesheet" href="../common/css/swiper-bundle.min.css" />
+        <link rel="stylesheet" href="../common/css/nice-select.css" />
+        <script src="../common/js/jquery-3.6.0.min.js"></script>
+        <script src="../common/js/aos.js"></script>
+        <script src="../common/js/swiper-bundle.min.js"></script>
+        <script src="../common/js/common.js"></script>
+        <script src="../common/js/jquery.nice-select.min.js"></script>
+    </head>
+    <body>
+        <div class="wrapper">
+            <div class="skip_navi">
+                <strong class="hide">바로가기 메뉴</strong>
+                <a href="#contents">본문 바로가기</a>
+                <a href="#gnb">주메뉴 바로가기</a>
+            </div>
+            <div class="bg_pc"></div>
+            <div class="contents">
+                <section class="main">
+                    <header class="tp pore">
+                        <div class="container needflex">
+                            <div class="header_l">
+                                <button class="header_back_btn black"></button>
+                            </div>
+                            <div class="header_c"><h1>LOGO</h1></div>
+                            <div class="header_r"></div>
+                        </div>
+                    </header>
+                    <div class="formwrap login">
+                        <div class="container">
+                            <form action="">
+                                <div class="inputid needflex mb10">
+                                    <div class="inputwrap">
+                                        <label for="id_01" class="hide">아이디(이메일)</label>
+                                        <input type="text" name="id_01" id="id_01" placeholder="이메일" required />
+                                    </div>
+                                    <span class="ml10 mr10">@</span>
+                                    <select class="selectform">
+                                        <option value="">gmail.com</option>
+                                        <option value="">naver.com</option>
+                                        <option value="">hanmail.net</option>
+                                        <option value="">tistory.com</option>
+                                        <option value="">paran.com</option>
+                                        <option value="">daum.net</option>
+                                        <option value="">chol.com</option>
+                                        <option value="">직접입력</option>
+                                    </select>
+                                </div>
+                                <div class="inputwrap needflex mb25">
+                                    <label for="pw_01" class="hide">비밀번호</label>
+                                    <input type="password" name="pw_01" id="pw_01" placeholder="비밀번호" required />
+                                </div>
+                                <div class="login_option needflex">
+                                    <div class="checkwrap needflex">
+                                        <input type="checkbox" name="chk_01" id="chk_01" />
+                                        <label for="chk_01">자동로그인</label>
+                                    </div>
+                                    <div class="addlink needflex">
+                                        <a href="">비밀번호 찾기</a>
+                                        <span class="divider ml10 mr10"></span>
+                                        <a href="" class="yellow">회원가입</a>
+                                    </div>
+                                </div>
+                                <div class="buttonwrap">
+                                    <button class="btn00">로그인</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+        <script>
+            $(document).ready(function () {
+                $("select").niceSelect();
+            });
+        </script>
+    </body>
+</html>

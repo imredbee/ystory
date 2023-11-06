@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
+        <title></title>
+        <link rel="stylesheet" href="../common/css/default.css" />
+        <link rel="stylesheet" href="../common/css/aos.css" />
+        <link rel="stylesheet" href="../common/css/swiper-bundle.min.css" />
+        <link rel="stylesheet" href="../common/css/nice-select.css" />
+        <script src="../common/js/jquery-3.6.0.min.js"></script>
+        <script src="../common/js/aos.js"></script>
+        <script src="../common/js/swiper-bundle.min.js"></script>
+        <script src="../common/js/common.js"></script>
+        <script src="../common/js/jquery.nice-select.min.js"></script>
+    </head>
+    <body>
+        <div class="wrapper">
+            <div class="skip_navi">
+                <strong class="hide">바로가기 메뉴</strong>
+                <a href="#contents">본문 바로가기</a>
+                <a href="#gnb">주메뉴 바로가기</a>
+            </div>
+            <div class="bg_pc"></div>
+            <div class="contents">
+                <section class="main">
+                    <header class="tp pore">
+                        <div class="container needflex">
+                            <div class="header_l">
+                                <button class="header_back_btn black"></button>
+                            </div>
+                            <div class="header_c"><h1>LOGO</h1></div>
+                            <div class="header_r"></div>
+                        </div>
+                    </header>
+                    <div class="formwrap signin">
+                        <div class="container">
+                            <form action="">
+                                <section class="mbpvrfwrap">
+                                    <div class="mbnumwrap">
+                                        <div class="inputwrap mb20">
+                                            <label for="mobile"></label>
+                                            <input type="tel" name="mobilenumber" id="mobile" placeholder="휴대폰 번호를 입력해주세요" maxlength="11" required />
+                                        </div>
+                                        <p class="textwrap">
+                                            <span class="yellow"
+                                                >인증번호 발송에는 시간이 소요됩니다.<br />
+                                                인증번호는 문자메시지로 발송되며, 수신하지 못했다면 차단된 메시지 를 확인해주세요.</span
+                                            >
+                                        </p>
+                                    </div>
+                                    <div class="vrfwrap">
+                                        <div class="inputwrap mb20">
+                                            <label for="vrfnum"></label>
+                                            <input type="tel" name="verifying" id="vrfnum" placeholder="인증번호 6자리" maxlength="6" required />
+                                        </div>
+                                        <p class="textwrap">
+                                            <!-- hide 클래스로 제어 -->
+                                            <span class="red hide">인증번호가 일치하지 않습니다</span>
+                                            <span class="yellow">인증번호가 일치합니다</span>
+                                        </p>
+                                        <div class="buttonwrap">
+                                            <button class="resend">인증번호 재전송 (남은 횟수 <span>4</span>회)</button>
+                                        </div>
+                                    </div>
+                                </section>
+                                <div class="buttonwrap">
+                                    <button class="btn00 nextstep" disabled>인증번호 전송</button>
+                                    <button class="btn00 nextstep hide" disabled>다음</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+        <script>
+            $(document).ready(function () {
+                $("select").niceSelect();
+
+                $("#chk_all").change(function () {
+                    if ($("#chk_all").is(":checked")) {
+                        $(".chk_part").prop("checked", true);
+                    } else {
+                        $(".chk_part").prop("checked", false);
+                    }
+                });
+            });
+        </script>
+    </body>
+</html>
