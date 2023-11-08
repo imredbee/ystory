@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
+        <title></title>
+        <link rel="stylesheet" href="../common/css/default.css" />
+        <link rel="stylesheet" href="../common/css/aos.css" />
+        <link rel="stylesheet" href="../common/css/swiper-bundle.min.css" />
+        <link rel="stylesheet" href="../common/css/nice-select.css" />
+        <script src="../common/js/jquery-3.6.0.min.js"></script>
+        <script src="../common/js/aos.js"></script>
+        <script src="../common/js/swiper-bundle.min.js"></script>
+        <script src="../common/js/common.js"></script>
+        <script src="../common/js/jquery.nice-select.min.js"></script>
+    </head>
+    <body>
+        <div class="wrapper">
+            <div class="skip_navi">
+                <strong class="hide">바로가기 메뉴</strong>
+                <a href="#contents">본문 바로가기</a>
+                <a href="#gnb">주메뉴 바로가기</a>
+            </div>
+            <div class="bg_pc"></div>
+            <div class="contents">
+                <section class="main">
+                    <header class="tp pore">
+                        <div class="container needflex">
+                            <div class="header_l">
+                                <button class="header_back_btn black"></button>
+                            </div>
+                            <div class="header_c"><h1>LOGO</h1></div>
+                            <div class="header_r"></div>
+                        </div>
+                    </header>
+                    <div class="formwrap signin">
+                        <div class="container">
+                            <h5 class="step_tit">내 정보 입력</h5>
+                            <form action="">
+                                <section class="myInfowrap">
+                                    <!-- 이메일 입력 -->
+                                    <h6 class="input_tit">이메일 입력</h6>
+                                    <div class="inputid needflex mb30">
+                                        <div class="inputwrap">
+                                            <label for="id_01"><span class="hide">아이디(이메일)</span></label>
+                                            <input type="text" name="id_01" id="id_01" placeholder="ssodaeng" required />
+                                        </div>
+                                        <span class="format ml10 mr10">@</span>
+                                        <select class="selectform">
+                                            <option value="">gmail.com</option>
+                                            <option value="">naver.com</option>
+                                            <option value="">hanmail.net</option>
+                                            <option value="">tistory.com</option>
+                                            <option value="">paran.com</option>
+                                            <option value="">daum.net</option>
+                                            <option value="">chol.com</option>
+                                            <option value="">직접입력</option>
+                                        </select>
+                                        <span></span>
+                                    </div>
+                                    <!-- 비밀번호 입력 -->
+                                    <h6 class="input_tit">비밀번호 입력</h6>
+                                    <div class="inputwrap needflex mb20">
+                                        <label for="pw_01"><span class="hide">비밀번호</span></label>
+                                        <input type="password" name="pw_01" id="pw_01" placeholder="비밀번호를 입력해주세요" required />
+                                    </div>
+                                    <p class="textwrap mb30">
+                                        <span class="yellow"> 영문 + 숫자 + 특수문자 8~20자리 </span>
+                                    </p>
+                                    <div class="inputwrap needflex mb30">
+                                        <label for="pw_01"><span class="hide">비밀번호 확인</span></label>
+                                        <input type="password" name="pw_01" id="pw_01" placeholder="비밀번호 확인" required />
+                                    </div>
+                                    <!-- 이름 입력 -->
+                                    <h6 class="input_tit">이름</h6>
+                                    <div class="inputwrap mb30">
+                                        <label for="nm_01"><span class="hide">이름</span></label>
+                                        <input type="text" name="nm_01" id="nm_01" placeholder="이름을 입력해주세요" required />
+                                    </div>
+                                    <!-- 생년월일 입력 -->
+                                    <h6 class="input_tit mb30">생년월일</h6>
+                                    <div class="inputwrap mb20">
+                                        <label for="brth_01"><span class="hide">생년월일</span></label>
+                                        <input type="text" name="brth_01" id="brth_01" placeholder="생년월일을 입력해주세요" required />
+                                    </div>
+                                    <p class="textwrap mb30">
+                                        <span class="yellow">예시 ) 19980620</span>
+                                    </p>
+                                    <!-- 법명 입력 -->
+                                    <h6 class="input_tit">법명</h6>
+                                    <div class="inputwrap mb20">
+                                        <label for="bnm_01"><span class="hide">법명</span></label>
+                                        <input type="text" name="bnm_01" id="bnm_01" placeholder="법명을 입력해주세요" required />
+                                    </div>
+                                    <p class="textwrap mb30">
+                                        <span class="yellow">닉네임으로 사용될 법명입니다.<br />법명이 없으시면 원하시는 닉네임을 기재 후 다음 버튼을 눌러주세요.</span>
+                                    </p>
+                                    <div class="buttonwrap">
+                                        <button class="btn00 nextstep" disabled>다음</button>
+                                    </div>
+                                </section>
+                            </form>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+        <script>
+            $(document).ready(function () {
+                $("select").niceSelect();
+
+                $("#chk_all").change(function () {
+                    if ($("#chk_all").is(":checked")) {
+                        $(".chk_part").prop("checked", true);
+                    } else {
+                        $(".chk_part").prop("checked", false);
+                    }
+                });
+            });
+        </script>
+    </body>
+</html>
