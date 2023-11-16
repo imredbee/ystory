@@ -55,7 +55,20 @@ body {
         font-family: "preten-sb";
     }
 }
-
+.sticky_rsz {
+    position: sticky;
+    top: 0;
+}
+.page_header {
+    z-index: 20;
+    background: #fff;
+    .step_tit {
+        padding: 30px 0;
+        text-align: center;
+        font-size: $fs45;
+        font-family: "preten-sb";
+    }
+}
 //콘텐츠 스타일
 .contents {
     max-width: 640px;
@@ -72,7 +85,8 @@ body {
     }
     header {
         width: 100%;
-        padding-top: 31.25%;
+        // padding-top: 31.25%;
+        height: 100px;
         border-bottom: 9px solid #ffd04d;
         position: sticky;
         top: 0;
@@ -80,14 +94,14 @@ body {
         z-index: 999;
 
         .container {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: calc(100% - 60px);
+            // position: absolute;
+            // top: 0;
+            // left: 0;
+            // width: calc(100% - 60px);
             height: 100%;
-            padding-bottom: 8.5%;
+            // padding-bottom: 8.5%;
             &.needflex {
-                align-items: end;
+                align-items: center;
             }
 
             .header_l {
@@ -187,6 +201,7 @@ body {
                 padding-bottom: 60px;
                 &.needflex {
                     justify-content: space-between;
+                    gap: 0 20px;
                 }
                 .textwrap {
                     font-size: $fs45;
@@ -206,15 +221,21 @@ body {
                     height: 34px;
                     font-size: $fs24;
                     display: block;
+                    flex-shrink: 0;
+                    position: relative;
                     &.arrow_r {
+                        padding-right: 19px;
                         &::after {
                             content: "";
                             display: inline-block;
-                            position: relative;
+                            position: absolute;
+                            top: 50%;
+                            transform: translateY(-50%);
                             padding-left: 10px;
                             width: 9px;
                             height: 18px;
                             background: url(../images/btn_arrow_r.png) no-repeat center center;
+                            background-size: 9px;
                         }
                     }
                 }
@@ -296,6 +317,12 @@ body {
                         margin: unset;
                         padding: 0 30px;
                         padding-bottom: 80px;
+                        @include maxWidth(640px) {
+                            padding: 0 16px;
+                        }
+                        @include maxWidth(320px) {
+                            padding: 0 8px;
+                        }
                     }
                     &.needflex {
                         flex-direction: column;
@@ -319,7 +346,8 @@ body {
                             box-shadow: 0 15px 20px 0 rgba(0, 0, 0, 0.25);
 
                             figure {
-                                width: 33.45%;
+                                flex: 0 0 33.45%;
+                                // width: 33.45%;
                                 padding-bottom: 20%;
                                 position: relative;
 
@@ -338,7 +366,7 @@ body {
                                 border-top-right-radius: 20px;
                                 border-bottom-right-radius: 20px;
                                 font-size: $fs28;
-                                padding-left: 20px;
+                                padding: 0 20px;
                                 color: #000;
 
                                 span {
@@ -390,7 +418,7 @@ body {
                                     height: 45.52%;
                                     color: #fff;
                                     font-size: $fs20;
-                                    padding: 20px;
+                                    padding: 0 20px;
                                     span {
                                         font-size: $fs15;
                                         display: block;
@@ -399,7 +427,7 @@ body {
                                     }
                                     &.needflex {
                                         flex-direction: column;
-                                        justify-content: end;
+                                        justify-content: center;
                                         gap: 8px 0;
                                     }
                                     &.overview {
@@ -451,10 +479,11 @@ body {
             }
         }
 
-        // 상세페이지
+        // 상세 페이지
         .viewpagewrap {
             height: calc(100vh - 155px);
             overflow: hidden;
+            position: relative;
 
             &.act01 {
                 background: url(../images/viewpage_activity_01.jpg) no-repeat top center;
@@ -463,16 +492,22 @@ body {
             }
             .descwrap {
                 padding: 0 30px;
-                position: relative;
-                top: 500px;
+                position: absolute;
+                bottom: 0;
                 background: #fff;
                 border-top-left-radius: 40px;
                 border-top-right-radius: 40px;
-                height: 100%;
+                height: 65%;
                 transition: 0.3s all;
+                @include maxWidth(640px) {
+                    padding: 0 16px;
+                }
+                @include maxWidth(320px) {
+                    padding: 0 8px;
+                }
 
                 &.spanned {
-                    top: 250px;
+                    height: 80%;
                 }
 
                 &.needflex {
@@ -508,18 +543,43 @@ body {
                     }
                     padding-bottom: 35px;
                     border-bottom: 1px solid #767676;
+                    margin-bottom: 40px;
+                }
+                .con_txtarea {
+                    padding: 0 0 30px;
+                    flex-grow: 1;
+                    overflow-y: auto;
+                    .textwrap {
+                        p.para_tit {
+                            font-size: $fs30;
+                            font-family: "preten-sb";
+                            margin-bottom: 10px;
+                            color: #000;
+                        }
+                        p {
+                            font-size: $fs24;
+                            color: #767676;
+                        }
+                    }
+                }
+                .buttonwrap {
+                    padding: 30px 0;
                 }
             }
         }
-        // 교육페이지
+        // 교육 페이지
         .eduwrap {
             position: relative;
             .swiperTab {
                 padding: 0 30px;
-                position: sticky;
-                top: 0;
                 background: #fff;
                 z-index: 10;
+                @include maxWidth(640px) {
+                    padding: 0 16px;
+                }
+                @include maxWidth(320px) {
+                    padding: 0 8px;
+                }
                 .tab_list {
                     padding: 30px 0;
                     top: 0;
@@ -550,6 +610,12 @@ body {
             }
             .tabview_list {
                 padding: 10px 30px 60px;
+                @include maxWidth(640px) {
+                    padding: 10px 16px 60px;
+                }
+                @include maxWidth(320px) {
+                    padding: 10px 8px 60px;
+                }
                 ul {
                     display: none;
                     flex-direction: column;
@@ -621,12 +687,6 @@ body {
         // 폼 페이지
         .formwrap {
             position: relative;
-            .step_tit {
-                text-align: center;
-                font-size: $fs45;
-                font-family: "preten-sb";
-                margin-bottom: 80px;
-            }
             .format {
                 font-size: $fs30;
             }
@@ -829,6 +889,9 @@ body {
                     }
                     .textwrap {
                         margin-bottom: 35%;
+                        b {
+                            font-size: $fs45;
+                        }
                         span {
                             display: block;
                             margin-top: 20px;
@@ -892,6 +955,184 @@ body {
                 }
             }
         }
+        // 약관 페이지
+        .tabmenu.term {
+            .tab_list {
+                margin-bottom: 50px;
+                &.needflex {
+                    flex-wrap: wrap;
+                }
+                li {
+                    flex: 1 1 50%;
+                    border: 1px solid #ccc;
+                    &.active {
+                        border: 1px solid transparent;
+                        background: #ffd04d;
+                    }
+                    a {
+                        padding: 9px 10px;
+                        text-align: center;
+                        font-size: $fs18;
+                        font-family: "preten-sb";
+                        color: #000;
+                    }
+                }
+            }
+            .tabview_list {
+                article {
+                    display: none;
+                    font-size: $fs18;
+                    color: #767676;
+                    &.active {
+                        display: flex;
+                        flex-direction: column;
+                    }
+                    b {
+                        font-family: "preten-sb";
+                        margin-bottom: 10px;
+                        color: #000;
+                    }
+                }
+            }
+        }
+        // 내정보입력 페이지
+        .forminfowrap {
+            .inputid {
+                &.needflex {
+                    align-items: center;
+                }
+                .selectform {
+                }
+            }
+            .textwrap {
+                padding: 0 20px;
+            }
+        }
+        // 내정보 페이지
+        .myinfowrap {
+            padding-bottom: 60px;
+            .profile_img {
+                margin: 0 auto;
+                margin-bottom: 20px;
+                width: 25%;
+                padding-bottom: 25%;
+                position: relative;
+                border-radius: 50%;
+                overflow: hidden;
+                img {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                }
+            }
+            .profile_name {
+                text-align: center;
+                font-size: $fs40;
+                font-family: "preten-sb";
+                margin-bottom: 50px;
+            }
+            .infochangewrap {
+                .chgrp {
+                    .accessible {
+                        position: relative;
+                        cursor: pointer;
+                        &::after {
+                            content: "";
+                            display: block;
+                            position: absolute;
+                            top: 50%;
+                            left: 50%;
+                            transform: translate(-50%, -50%);
+                            width: 100%;
+                            height: 100%;
+                            border: 1px solid #989898;
+                            border-radius: 20px;
+                            z-index: -1;
+                        }
+                        padding: 24px 20px;
+                        &.needflex {
+                            gap: 0 20px;
+                            align-items: center;
+                        }
+                        label,
+                        .labelact {
+                            font-size: $fs30;
+                            font-family: "preten-sb";
+                            flex-shrink: 0;
+                        }
+                        input {
+                            padding: 10px;
+                            &:read-only {
+                                outline: unset;
+                                text-align: right;
+                            }
+                        }
+                        .helpalert {
+                            flex-shrink: 0;
+                        }
+                    }
+                    .addonwrap {
+                        display: none;
+                    }
+                    &.active {
+                        .accessible {
+                            &::after {
+                                border: 2px solid #ffd04d;
+                            }
+                            &.invalid {
+                                &::after {
+                                    border: 2px solid #cb3100;
+                                }
+                            }
+                        }
+                        .addonwrap {
+                            display: block;
+                        }
+                    }
+                }
+            }
+        }
+        // 카테고리 페이지
+        .ctgrwrap {
+            .mc {
+                padding-bottom: 40px;
+                &:last-of-type {
+                    padding-bottom: unset;
+                }
+                p {
+                    font-size: $fs35;
+                    font-family: "preten-sb";
+                    padding-bottom: 10px;
+                    border-bottom: 1px solid #000;
+                }
+                ul {
+                    padding: 0 30px;
+                    &.needflex {
+                        flex-wrap: wrap;
+                        gap: 30px 65px;
+                        @include maxWidth(520px) {
+                            gap: 15px 0;
+                        }
+                        li {
+                            position: relative;
+                            flex: 1 1 calc((100% - 65px) / 2);
+                            border-bottom: 1px solid #000;
+                            @include maxWidth(520px) {
+                                flex: 1 1 100%;
+                            }
+                            a {
+                                font-size: $fs30;
+                                margin-bottom: 10px;
+                                background: url(../images/ctgr_btn.png) no-repeat center right;
+                                @include maxWidth(520px) {
+                                    background-size: 10px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
         footer {
             padding: 40px 25px;
             font-size: 14px;
@@ -900,7 +1141,8 @@ body {
             .footer_top {
                 .links {
                     &.needflex {
-                        gap: 0 20px;
+                        gap: 15px 20px;
+                        flex-wrap: wrap;
                     }
                 }
             }
@@ -931,15 +1173,21 @@ body {
         }
         .nav_left,
         .nav_right {
-            flex: 1 0 30%;
+            flex-grow: 1;
             border-top-left-radius: 30px;
             border-top-right-radius: 30px;
 
             .btn_wrap {
                 padding: 0 10px;
+                @include maxWidth(480px) {
+                    padding: 0;
+                }
                 &.needflex {
                     gap: 0 14px;
                     justify-content: center;
+                    @include maxWidth(480px) {
+                        gap: 0;
+                    }
                     button {
                         width: 100%;
                         max-width: 100px;
@@ -948,10 +1196,30 @@ body {
                 }
             }
         }
+        .nav_left {
+            .btn_wrap {
+                @include maxWidth(480px) {
+                    padding-right: 10px;
+                }
+            }
+        }
+        .nav_right {
+            .btn_wrap {
+                @include maxWidth(480px) {
+                    padding-left: 10px;
+                }
+            }
+        }
         .nav_btn {
+            width: 40%;
             span {
                 display: block;
                 font-size: $fs18;
+            }
+            img {
+                @include maxWidth(480px) {
+                    width: 40px;
+                }
             }
             &.home {
                 width: 90px;

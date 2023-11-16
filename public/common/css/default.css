@@ -374,6 +374,10 @@ body.fixing {
   padding-left: 85px;
 }
 
+.pb0 {
+  padding-bottom: 0 !important;
+}
+
 .mr10 {
   margin-right: 10px;
 }
@@ -396,6 +400,10 @@ body.fixing {
 
 .mb30 {
   margin-bottom: 30px;
+}
+
+.mb60 {
+  margin-bottom: 60px;
 }
 
 .ml10 {
@@ -534,6 +542,22 @@ body {
   font-family: "preten-sb";
 }
 
+.sticky_rsz {
+  position: sticky;
+  top: 0;
+}
+
+.page_header {
+  z-index: 20;
+  background: #fff;
+}
+.page_header .step_tit {
+  padding: 30px 0;
+  text-align: center;
+  font-size: 2.8125rem;
+  font-family: "preten-sb";
+}
+
 .contents {
   max-width: 640px;
   width: 100%;
@@ -552,7 +576,7 @@ body {
 }
 .contents header {
   width: 100%;
-  padding-top: 31.25%;
+  height: 100px;
   border-bottom: 9px solid #ffd04d;
   position: sticky;
   top: 0;
@@ -560,15 +584,10 @@ body {
   z-index: 999;
 }
 .contents header .container {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: calc(100% - 60px);
   height: 100%;
-  padding-bottom: 8.5%;
 }
 .contents header .container.needflex {
-  align-items: end;
+  align-items: center;
 }
 .contents header .container .header_l {
   width: 42px;
@@ -668,6 +687,7 @@ body {
 }
 .contents .main .items .item_header.needflex {
   justify-content: space-between;
+  gap: 0 20px;
 }
 .contents .main .items .item_header .textwrap {
   font-size: 2.8125rem;
@@ -691,15 +711,23 @@ body {
   height: 34px;
   font-size: 1.5rem;
   display: block;
+  flex-shrink: 0;
+  position: relative;
+}
+.contents .main .items .item_header button.arrow_r {
+  padding-right: 19px;
 }
 .contents .main .items .item_header button.arrow_r::after {
   content: "";
   display: inline-block;
-  position: relative;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
   padding-left: 10px;
   width: 9px;
   height: 18px;
   background: url(../images/btn_arrow_r.png) no-repeat center center;
+  background-size: 9px;
 }
 .contents .main .items.item01 {
   padding-bottom: 35px;
@@ -772,6 +800,16 @@ body {
   padding: 0 30px;
   padding-bottom: 80px;
 }
+@media screen and (max-width: 640px) {
+  .contents .main .items.item02 .edu_con.container {
+    padding: 0 16px;
+  }
+}
+@media screen and (max-width: 320px) {
+  .contents .main .items.item02 .edu_con.container {
+    padding: 0 8px;
+  }
+}
 .contents .main .items.item02 .edu_con.needflex {
   flex-direction: column;
   gap: 35px 0;
@@ -794,7 +832,7 @@ body {
   box-shadow: 0 15px 20px 0 rgba(0, 0, 0, 0.25);
 }
 .contents .main .items.item02 .edu_con > li > a figure {
-  width: 33.45%;
+  flex: 0 0 33.45%;
   padding-bottom: 20%;
   position: relative;
 }
@@ -811,7 +849,7 @@ body {
   border-top-right-radius: 20px;
   border-bottom-right-radius: 20px;
   font-size: 1.75rem;
-  padding-left: 20px;
+  padding: 0 20px;
   color: #000;
 }
 .contents .main .items.item02 .edu_con > li > a .textwrap span {
@@ -863,7 +901,7 @@ body {
   height: 45.52%;
   color: #fff;
   font-size: 1.25rem;
-  padding: 20px;
+  padding: 0 20px;
 }
 .contents .main .items.item03 .store_con.needflex > li a .textwrap span {
   font-size: 0.9375rem;
@@ -876,7 +914,7 @@ body {
 }
 .contents .main .items.item03 .store_con.needflex > li a .textwrap.needflex {
   flex-direction: column;
-  justify-content: end;
+  justify-content: center;
   gap: 8px 0;
 }
 .contents .main .items.item03 .store_con.needflex > li a .textwrap.overview {
@@ -919,22 +957,33 @@ body {
 .contents .main .viewpagewrap {
   height: calc(100vh - 155px);
   overflow: hidden;
+  position: relative;
 }
 .contents .main .viewpagewrap.act01 {
   background: url(../images/viewpage_activity_01.jpg) no-repeat top center;
 }
 .contents .main .viewpagewrap .descwrap {
   padding: 0 30px;
-  position: relative;
-  top: 500px;
+  position: absolute;
+  bottom: 0;
   background: #fff;
   border-top-left-radius: 40px;
   border-top-right-radius: 40px;
-  height: 100%;
+  height: 65%;
   transition: 0.3s all;
 }
+@media screen and (max-width: 640px) {
+  .contents .main .viewpagewrap .descwrap {
+    padding: 0 16px;
+  }
+}
+@media screen and (max-width: 320px) {
+  .contents .main .viewpagewrap .descwrap {
+    padding: 0 8px;
+  }
+}
 .contents .main .viewpagewrap .descwrap.spanned {
-  top: 250px;
+  height: 80%;
 }
 .contents .main .viewpagewrap .descwrap.needflex {
   flex-direction: column;
@@ -958,6 +1007,7 @@ body {
   font-size: 2.8125rem;
   padding-bottom: 35px;
   border-bottom: 1px solid #767676;
+  margin-bottom: 40px;
 }
 .contents .main .viewpagewrap .descwrap .con_tit.needflex {
   flex-direction: column;
@@ -968,15 +1018,41 @@ body {
 .contents .main .viewpagewrap .descwrap .con_tit span {
   font-size: 1.5rem;
 }
+.contents .main .viewpagewrap .descwrap .con_txtarea {
+  padding: 0 0 30px;
+  flex-grow: 1;
+  overflow-y: auto;
+}
+.contents .main .viewpagewrap .descwrap .con_txtarea .textwrap p.para_tit {
+  font-size: 1.875rem;
+  font-family: "preten-sb";
+  margin-bottom: 10px;
+  color: #000;
+}
+.contents .main .viewpagewrap .descwrap .con_txtarea .textwrap p {
+  font-size: 1.5rem;
+  color: #767676;
+}
+.contents .main .viewpagewrap .descwrap .buttonwrap {
+  padding: 30px 0;
+}
 .contents .main .eduwrap {
   position: relative;
 }
 .contents .main .eduwrap .swiperTab {
   padding: 0 30px;
-  position: sticky;
-  top: 0;
   background: #fff;
   z-index: 10;
+}
+@media screen and (max-width: 640px) {
+  .contents .main .eduwrap .swiperTab {
+    padding: 0 16px;
+  }
+}
+@media screen and (max-width: 320px) {
+  .contents .main .eduwrap .swiperTab {
+    padding: 0 8px;
+  }
 }
 .contents .main .eduwrap .swiperTab .tab_list {
   padding: 30px 0;
@@ -1012,6 +1088,16 @@ body {
 }
 .contents .main .eduwrap .tabview_list {
   padding: 10px 30px 60px;
+}
+@media screen and (max-width: 640px) {
+  .contents .main .eduwrap .tabview_list {
+    padding: 10px 16px 60px;
+  }
+}
+@media screen and (max-width: 320px) {
+  .contents .main .eduwrap .tabview_list {
+    padding: 10px 8px 60px;
+  }
 }
 .contents .main .eduwrap .tabview_list ul {
   display: none;
@@ -1078,12 +1164,6 @@ body {
 }
 .contents .main .formwrap {
   position: relative;
-}
-.contents .main .formwrap .step_tit {
-  text-align: center;
-  font-size: 2.8125rem;
-  font-family: "preten-sb";
-  margin-bottom: 80px;
 }
 .contents .main .formwrap .format {
   font-size: 1.875rem;
@@ -1277,6 +1357,9 @@ body {
 .contents .main .formwrap.signin .complete .textwrap {
   margin-bottom: 35%;
 }
+.contents .main .formwrap.signin .complete .textwrap b {
+  font-size: 2.8125rem;
+}
 .contents .main .formwrap.signin .complete .textwrap span {
   display: block;
   margin-top: 20px;
@@ -1334,13 +1417,176 @@ body {
   color: #767676;
   margin-top: 10px;
 }
+.contents .main .tabmenu.term .tab_list {
+  margin-bottom: 50px;
+}
+.contents .main .tabmenu.term .tab_list.needflex {
+  flex-wrap: wrap;
+}
+.contents .main .tabmenu.term .tab_list li {
+  flex: 1 1 50%;
+  border: 1px solid #ccc;
+}
+.contents .main .tabmenu.term .tab_list li.active {
+  border: 1px solid transparent;
+  background: #ffd04d;
+}
+.contents .main .tabmenu.term .tab_list li a {
+  padding: 9px 10px;
+  text-align: center;
+  font-size: 1.125rem;
+  font-family: "preten-sb";
+  color: #000;
+}
+.contents .main .tabmenu.term .tabview_list article {
+  display: none;
+  font-size: 1.125rem;
+  color: #767676;
+}
+.contents .main .tabmenu.term .tabview_list article.active {
+  display: flex;
+  flex-direction: column;
+}
+.contents .main .tabmenu.term .tabview_list article b {
+  font-family: "preten-sb";
+  margin-bottom: 10px;
+  color: #000;
+}
+.contents .main .forminfowrap .inputid.needflex {
+  align-items: center;
+}
+.contents .main .forminfowrap .textwrap {
+  padding: 0 20px;
+}
+.contents .main .myinfowrap {
+  padding-bottom: 60px;
+}
+.contents .main .myinfowrap .profile_img {
+  margin: 0 auto;
+  margin-bottom: 20px;
+  width: 25%;
+  padding-bottom: 25%;
+  position: relative;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.contents .main .myinfowrap .profile_img img {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.contents .main .myinfowrap .profile_name {
+  text-align: center;
+  font-size: 2.5rem;
+  font-family: "preten-sb";
+  margin-bottom: 50px;
+}
+.contents .main .myinfowrap .infochangewrap .chgrp .accessible {
+  position: relative;
+  cursor: pointer;
+  padding: 24px 20px;
+}
+.contents .main .myinfowrap .infochangewrap .chgrp .accessible::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  border: 1px solid #989898;
+  border-radius: 20px;
+  z-index: -1;
+}
+.contents .main .myinfowrap .infochangewrap .chgrp .accessible.needflex {
+  gap: 0 20px;
+  align-items: center;
+}
+.contents .main .myinfowrap .infochangewrap .chgrp .accessible label,
+.contents .main .myinfowrap .infochangewrap .chgrp .accessible .labelact {
+  font-size: 1.875rem;
+  font-family: "preten-sb";
+  flex-shrink: 0;
+}
+.contents .main .myinfowrap .infochangewrap .chgrp .accessible input {
+  padding: 10px;
+}
+.contents .main .myinfowrap .infochangewrap .chgrp .accessible input:-moz-read-only {
+  outline: unset;
+  text-align: right;
+}
+.contents .main .myinfowrap .infochangewrap .chgrp .accessible input:read-only {
+  outline: unset;
+  text-align: right;
+}
+.contents .main .myinfowrap .infochangewrap .chgrp .accessible .helpalert {
+  flex-shrink: 0;
+}
+.contents .main .myinfowrap .infochangewrap .chgrp .addonwrap {
+  display: none;
+}
+.contents .main .myinfowrap .infochangewrap .chgrp.active .accessible::after {
+  border: 2px solid #ffd04d;
+}
+.contents .main .myinfowrap .infochangewrap .chgrp.active .accessible.invalid::after {
+  border: 2px solid #cb3100;
+}
+.contents .main .myinfowrap .infochangewrap .chgrp.active .addonwrap {
+  display: block;
+}
+.contents .main .ctgrwrap .mc {
+  padding-bottom: 40px;
+}
+.contents .main .ctgrwrap .mc:last-of-type {
+  padding-bottom: unset;
+}
+.contents .main .ctgrwrap .mc p {
+  font-size: 2.1875rem;
+  font-family: "preten-sb";
+  padding-bottom: 10px;
+  border-bottom: 1px solid #000;
+}
+.contents .main .ctgrwrap .mc ul {
+  padding: 0 30px;
+}
+.contents .main .ctgrwrap .mc ul.needflex {
+  flex-wrap: wrap;
+  gap: 30px 65px;
+}
+@media screen and (max-width: 520px) {
+  .contents .main .ctgrwrap .mc ul.needflex {
+    gap: 15px 0;
+  }
+}
+.contents .main .ctgrwrap .mc ul.needflex li {
+  position: relative;
+  flex: 1 1 calc((100% - 65px) / 2);
+  border-bottom: 1px solid #000;
+}
+@media screen and (max-width: 520px) {
+  .contents .main .ctgrwrap .mc ul.needflex li {
+    flex: 1 1 100%;
+  }
+}
+.contents .main .ctgrwrap .mc ul.needflex li a {
+  font-size: 1.875rem;
+  margin-bottom: 10px;
+  background: url(../images/ctgr_btn.png) no-repeat center right;
+}
+@media screen and (max-width: 520px) {
+  .contents .main .ctgrwrap .mc ul.needflex li a {
+    background-size: 10px;
+  }
+}
 .contents .main footer {
   padding: 40px 25px;
   font-size: 14px;
   color: #767676;
 }
 .contents .main footer .footer_top .links.needflex {
-  gap: 0 20px;
+  gap: 15px 20px;
+  flex-wrap: wrap;
 }
 .contents .navbar {
   position: fixed;
@@ -1368,7 +1614,7 @@ body {
 }
 .contents .navbar .nav_left,
 .contents .navbar .nav_right {
-  flex: 1 0 30%;
+  flex-grow: 1;
   border-top-left-radius: 30px;
   border-top-right-radius: 30px;
 }
@@ -1376,10 +1622,22 @@ body {
 .contents .navbar .nav_right .btn_wrap {
   padding: 0 10px;
 }
+@media screen and (max-width: 480px) {
+  .contents .navbar .nav_left .btn_wrap,
+  .contents .navbar .nav_right .btn_wrap {
+    padding: 0;
+  }
+}
 .contents .navbar .nav_left .btn_wrap.needflex,
 .contents .navbar .nav_right .btn_wrap.needflex {
   gap: 0 14px;
   justify-content: center;
+}
+@media screen and (max-width: 480px) {
+  .contents .navbar .nav_left .btn_wrap.needflex,
+  .contents .navbar .nav_right .btn_wrap.needflex {
+    gap: 0;
+  }
 }
 .contents .navbar .nav_left .btn_wrap.needflex button,
 .contents .navbar .nav_right .btn_wrap.needflex button {
@@ -1387,9 +1645,27 @@ body {
   max-width: 100px;
   height: 100px;
 }
+@media screen and (max-width: 480px) {
+  .contents .navbar .nav_left .btn_wrap {
+    padding-right: 10px;
+  }
+}
+@media screen and (max-width: 480px) {
+  .contents .navbar .nav_right .btn_wrap {
+    padding-left: 10px;
+  }
+}
+.contents .navbar .nav_btn {
+  width: 40%;
+}
 .contents .navbar .nav_btn span {
   display: block;
   font-size: 1.125rem;
+}
+@media screen and (max-width: 480px) {
+  .contents .navbar .nav_btn img {
+    width: 40px;
+  }
 }
 .contents .navbar .nav_btn.home {
   width: 90px;
