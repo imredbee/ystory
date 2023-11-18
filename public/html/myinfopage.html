@@ -23,7 +23,7 @@
             <div class="bg_pc"></div>
             <div class="contents">
                 <section class="main">
-                    <header>
+                    <header class="needflex">
                         <div class="container needflex">
                             <div class="header_l">
                                 <ul>
@@ -32,7 +32,9 @@
                                     <li></li>
                                 </ul>
                             </div>
-                            <div class="header_c"><h1>LOGO</h1></div>
+                            <div class="header_c">
+                                <h1><img src="../common/images/header_logo.svg" alt="쏘댕기기 메인 로고" /></h1>
+                            </div>
                             <div class="header_r"></div>
                         </div>
                     </header>
@@ -82,9 +84,9 @@
                                         <input type="text" name="" id="" readonly placeholder="010-1234-1234" />
                                     </div>
                                     <div class="addonwrap">
-                                        <button class="sendattnum btn00" disabled>인증번호 받기</button>
+                                        <button class="sendattnum btn00 mb20" disabled>인증번호 받기</button>
                                         <div class="addonwrap2">
-                                            <div class="inputwrap needflex">
+                                            <div class="inputwrap needflex mb20">
                                                 <label for=""><span class="hide">인증번호 입력</span></label>
                                                 <input type="number" maxlength="6" placeholder="인증번호 6자리를 입력해주세요" />
                                                 <span class="helpalert">9분 45초</span>
@@ -99,11 +101,11 @@
                                         <input type="text" name="" id="" readonly />
                                     </div>
                                     <div class="addonwrap">
-                                        <div class="inputwrap">
+                                        <div class="inputwrap mb20">
                                             <label for=""></label>
                                             <input type="text" name="" id="" placeholder="기존 비밀번호를 입력해주세요" />
-                                            <span class="block yellow pl20 pr20">영문 + 숫자 + 특수문자 8~20자리</span>
                                         </div>
+                                        <span class="block yellow br pl20 pr20 mb20">영문 + 숫자 + 특수문자 8~20자리</span>
                                         <button class="confirm btn00" disabled>확인</button>
                                     </div>
                                 </div>
@@ -141,6 +143,8 @@
                 <script>
                     $(".accessible").on("click", function () {
                         var selChgrp = $(this).parent();
+                        $(".accessible").parent().removeClass("active");
+                        $(".accessible").parent().find("input").prop("readonly", true);
 
                         if (selChgrp.hasClass("active")) {
                             selChgrp.removeClass("active");

@@ -597,3 +597,12 @@ $m720: 720px;
 .red {
     color: #cb3100 !important;
 }
+
+.btn00 {
+    @include maxWidth(480px) {
+        height: 55px;
+    }
+    @include maxWidth(320px) {
+        height: 45px;
+    }
+}

@@ -48,7 +48,7 @@ $(document).ready(function () {
     // .sticky_rsz 항목 높이값
     function hdrRsz() {
         var hdrHeight = $("header").innerHeight();
-        $(".sticky_rsz").css("top", hdrHeight + 9);
+        $(".sticky_rsz").css("top", hdrHeight);
     }
     hdrRsz();
     $(window).resize(function () {

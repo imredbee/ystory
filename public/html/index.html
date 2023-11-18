@@ -23,7 +23,7 @@
             <div class="bg_pc"></div>
             <div class="contents">
                 <section class="main">
-                    <header>
+                    <header class="needflex">
                         <div class="container needflex">
                             <div class="header_l">
                                 <ul>
@@ -32,14 +32,16 @@
                                     <li></li>
                                 </ul>
                             </div>
-                            <div class="header_c"><h1>LOGO</h1></div>
+                            <div class="header_c">
+                                <h1><img src="../common/images/header_logo.svg" alt="쏘댕기기 메인 로고" /></h1>
+                            </div>
                             <div class="header_r"></div>
                         </div>
                     </header>
                     <div class="needflex">
                         <div class="items item00 greeting pb0">
                             <div class="item_header container needflex">
-                                <p class="textwrap"><b>문수선원님 안녕하세요</b><span class="gray ells">다양한 활동으로 불교를 경험하세요</span></p>
+                                <p class="textwrap"><b class="nobullet">문수선원님 안녕하세요</b><span class="gray ells">다양한 활동으로 불교를 경험하세요</span></p>
                                 <button class="btn01 noline gray">로그아웃</button>
                             </div>
                         </div>
@@ -141,15 +143,19 @@
                                     <a href="" class="box"></a>
                                 </li> -->
                             </ul>
-                            <div class="swiper-pagination"></div>
+                            <div class="swiper-util">
+                                <div class="util_btn swiper-button-prev"></div>
+                                <div class="swiper-pagination"></div>
+                                <div class="util_btn swiper-button-next"></div>
+                            </div>
                         </div>
                         <span class="divider"></span>
                         <div class="items item03">
                             <div class="item_header container needflex">
-                                <p class="textwrap"><b>연꽃스토어</b><span class="gray ells">금주의 인기있는 제품들을 만나보세요</span></p>
+                                <p class="textwrap"><b>쏘댕마켓</b><span class="gray ells">금주의 인기있는 제품들을 만나보세요</span></p>
                                 <button class="btn01 noline gray arrow_r">더보기</button>
                             </div>
-                            <ul class="store_con container needflex">
+                            <ul class="store_con container needflex hide">
                                 <li>
                                     <a href="" class="box radi">
                                         <img src="../common/images/storeitem_01.png" alt="" />
@@ -187,6 +193,9 @@
                                     >
                                 </li>
                             </ul>
+                            <figure class="preparing">
+                                <img src="../common/images/con_icn_prepare.svg" alt="준비중 입니다" />
+                            </figure>
                         </div>
                         <div class="banners swiperBanner">
                             <ul class="swiper-wrapper">
@@ -274,11 +283,23 @@
                         loop: true,
                         centeredSlides: true,
                         loopAdditionalSlides: 1,
-                        spaceBetween: 40,
+                        spaceBetween: 20,
                         // freeMode: true,
                         pagination: {
                             el: ".swiperActivity .swiper-pagination",
                             clickable: true,
+                        },
+                        breakpoints: {
+                            640: {
+                                spaceBetween: 40,
+                            },
+                            480: {
+                                spaceBetween: 30,
+                            },
+                        },
+                        navigation: {
+                            nextEl: ".swiperActivity .swiper-button-next",
+                            prevEl: ".swiperActivity .swiper-button-prev",
                         },
                     });
                     var swiperBanner = new Swiper(".swiperBanner", {
