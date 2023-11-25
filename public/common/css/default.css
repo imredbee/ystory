@@ -508,17 +508,17 @@ body.fixing {
 }
 @media screen and (max-width: 480px) {
   html {
-    font-size: 10px;
+    font-size: 11px;
   }
 }
 @media screen and (max-width: 400px) {
   html {
-    font-size: 9px;
+    font-size: 10px;
   }
 }
 @media screen and (max-width: 320px) {
   html {
-    font-size: 8px;
+    font-size: 9.3px;
   }
 }
 
@@ -592,7 +592,7 @@ body {
 }
 .contents header {
   width: 100%;
-  height: 120px;
+  height: 100px;
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
   position: sticky;
   top: 0;
@@ -602,12 +602,14 @@ body {
 }
 @media screen and (max-width: 480px) {
   .contents header {
-    height: 100px;
+    padding-bottom: 10px;
+    height: 75px;
   }
 }
 @media screen and (max-width: 320px) {
   .contents header {
-    height: 85px;
+    padding-bottom: 7px;
+    height: 50px;
   }
 }
 .contents header.needflex {
@@ -633,29 +635,20 @@ body {
     height: 30px;
   }
 }
-.contents header .container .header_l ul {
-  width: 40px;
-  height: 34px;
-  position: relative;
-  top: 50%;
-  transform: translateY(-50%);
-}
-.contents header .container .header_l ul li {
+.contents header .container .header_l .header_hmbg_btn {
   width: 100%;
-  height: 3px;
-  border-radius: 4px;
-  background: #000;
-  position: absolute;
+  height: 100%;
+  background: url(../images/header_hmbg_btn.png) no-repeat center center;
 }
-.contents header .container .header_l ul li:first-of-type {
-  top: 0;
+@media screen and (max-width: 480px) {
+  .contents header .container .header_l .header_hmbg_btn {
+    background-size: 40px !important;
+  }
 }
-.contents header .container .header_l ul li:nth-of-type(2) {
-  top: 50%;
-  transform: translateY(-50%);
-}
-.contents header .container .header_l ul li:last-of-type {
-  bottom: 0;
+@media screen and (max-width: 320px) {
+  .contents header .container .header_l .header_hmbg_btn {
+    background-size: 30px !important;
+  }
 }
 .contents header .container .header_l .header_back_btn {
   width: 100%;
@@ -921,21 +914,6 @@ body {
   display: block;
   flex-shrink: 0;
   position: relative;
-}
-.contents .main .items .item_header button.arrow_r {
-  padding-right: 19px;
-}
-.contents .main .items .item_header button.arrow_r::after {
-  content: "";
-  display: inline-block;
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  padding-left: 10px;
-  width: 9px;
-  height: 18px;
-  background: url(../images/btn_arrow_r.png) no-repeat center center;
-  background-size: 9px;
 }
 .contents .main .items.item01 {
   padding-bottom: 35px;
@@ -1218,12 +1196,18 @@ body {
   height: 15px;
   background: #e5e5e5;
 }
-.contents .main .banners {
-  height: 161px;
+.contents .main .banners .swiper-slide {
+  position: relative;
+  height: auto;
+  width: 100%;
+  padding-top: 25.15%;
 }
 .contents .main .banners .banneritem {
   width: 100%;
   height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
   display: block;
 }
 .contents .main .banners .banneritem .textwrap {
@@ -1243,6 +1227,7 @@ body {
 }
 .contents .main .banners .banneritem.banner01 {
   background: url(../images/banner_01.png) no-repeat center center;
+  background-size: contain;
 }
 .contents .main .viewpagewrap {
   height: calc(100vh - 140px);
@@ -1792,9 +1777,6 @@ body {
   color: #767676;
   margin-top: 10px;
 }
-.contents .main .dashboardwrap .container {
-  padding: 60px 0;
-}
 .contents .main .dashboardwrap .container.needflex {
   flex-direction: column;
   gap: 40px 0;
@@ -1808,11 +1790,15 @@ body {
   flex-direction: column;
 }
 .contents .main .dashboardwrap .container .db_item figure {
+  position: relative;
   width: 100%;
-  height: 400px;
+  padding-top: 68.96%;
   background: #000;
 }
 .contents .main .dashboardwrap .container .db_item figure img {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
 }
 .contents .main .dashboardwrap .container .db_item .con_info {
@@ -1820,7 +1806,18 @@ body {
   background: #45474b;
   color: #fff;
 }
+@media screen and (max-width: 480px) {
+  .contents .main .dashboardwrap .container .db_item .con_info {
+    padding: 22.5px;
+  }
+}
+@media screen and (max-width: 320px) {
+  .contents .main .dashboardwrap .container .db_item .con_info {
+    padding: 15px;
+  }
+}
 .contents .main .dashboardwrap .container .db_item .con_info .item_header {
+  padding: unset;
   margin-bottom: 10px;
 }
 .contents .main .dashboardwrap .container .db_item .con_info .item_header h5 {
@@ -2088,6 +2085,18 @@ body {
   font-size: 14px;
   color: #767676;
 }
+@media screen and (max-width: 480px) {
+  .contents .main footer {
+    padding: 35px 20px;
+    font-size: 12px;
+  }
+}
+@media screen and (max-width: 320px) {
+  .contents .main footer {
+    padding: 25px 15px;
+    font-size: 10px;
+  }
+}
 .contents .main footer .footer_top .links.needflex {
   gap: 15px 20px;
   flex-wrap: wrap;
@@ -2097,107 +2106,149 @@ body {
   bottom: 0;
   width: 100%;
   max-width: 640px;
-  height: 140px;
+  height: 120px;
   z-index: 999;
   background: #fff;
   box-shadow: 0px -5px 4px 0px rgba(0, 0, 0, 0.25);
-}
-.contents .navbar.needflex {
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
+  padding-top: 16px;
+  padding-bottom: 24px;
 }
 @media screen and (max-width: 480px) {
   .contents .navbar {
-    height: 100px;
+    height: 90px;
+    padding-top: 12px;
+    padding-bottom: 18px;
   }
 }
 @media screen and (max-width: 320px) {
   .contents .navbar {
-    height: 85px;
+    height: 60px;
+    padding-top: 8px;
+    padding-bottom: 12px;
   }
 }
-.contents .navbar .nav_left,
-.contents .navbar .nav_right {
+.contents .navbar .btn_wrap {
+  height: 100%;
+  padding: 0 40px;
+}
+@media screen and (max-width: 640px) {
+  .contents .navbar .btn_wrap {
+    padding: 0 30px;
+  }
+}
+@media screen and (max-width: 480px) {
+  .contents .navbar .btn_wrap {
+    padding: 0 20px;
+  }
+}
+.contents .navbar .btn_wrap.needflex {
+  justify-content: center;
+  align-items: stretch;
+}
+.contents .navbar .btn_wrap.needflex {
+  justify-content: space-between;
+}
+.contents .navbar .btn_wrap.needflex button img {
+  height: 40px;
+}
+.contents .navbar .btn_wrap.needflex button.myPage .bgwrap {
+  background: url(../images/nav_icn_01.png) no-repeat center center;
+}
+@media screen and (max-width: 480px) {
+  .contents .navbar .btn_wrap.needflex button.myPage .bgwrap {
+    background-size: auto 30px;
+  }
+}
+@media screen and (max-width: 320px) {
+  .contents .navbar .btn_wrap.needflex button.myPage .bgwrap {
+    background-size: auto 20px;
+  }
+}
+.contents .navbar .btn_wrap.needflex button.myFriends .bgwrap {
+  background: url(../images/nav_icn_02.png) no-repeat center center;
+}
+@media screen and (max-width: 480px) {
+  .contents .navbar .btn_wrap.needflex button.myFriends .bgwrap {
+    background-size: auto 30px;
+  }
+}
+@media screen and (max-width: 320px) {
+  .contents .navbar .btn_wrap.needflex button.myFriends .bgwrap {
+    background-size: auto 20px;
+  }
+}
+.contents .navbar .btn_wrap.needflex button.myHistory .bgwrap {
+  background: url(../images/nav_icn_03.png) no-repeat center center;
+}
+@media screen and (max-width: 480px) {
+  .contents .navbar .btn_wrap.needflex button.myHistory .bgwrap {
+    background-size: auto 30px;
+  }
+}
+@media screen and (max-width: 320px) {
+  .contents .navbar .btn_wrap.needflex button.myHistory .bgwrap {
+    background-size: auto 20px;
+  }
+}
+.contents .navbar .btn_wrap.needflex button.myCart .bgwrap {
+  background: url(../images/nav_icn_04.png) no-repeat center center;
+}
+@media screen and (max-width: 480px) {
+  .contents .navbar .btn_wrap.needflex button.myCart .bgwrap {
+    background-size: auto 30px;
+  }
+}
+@media screen and (max-width: 320px) {
+  .contents .navbar .btn_wrap.needflex button.myCart .bgwrap {
+    background-size: auto 20px;
+  }
+}
+.contents .navbar .btn_wrap .nav_btn {
+  width: 80px;
+  height: 80px;
+  color: #000;
+}
+.contents .navbar .btn_wrap .nav_btn.needflex {
+  flex-direction: column;
+  justify-content: end;
+  align-items: center;
+}
+@media screen and (max-width: 480px) {
+  .contents .navbar .btn_wrap .nav_btn {
+    width: 60px;
+    height: 60px;
+  }
+}
+@media screen and (max-width: 320px) {
+  .contents .navbar .btn_wrap .nav_btn {
+    width: 40px;
+    height: 40px;
+  }
+}
+.contents .navbar .btn_wrap .nav_btn .bgwrap {
+  display: block;
+  width: 100%;
   flex-grow: 1;
 }
-@media screen and (max-width: 480px) {
-  .contents .navbar .nav_left .btn_wrap,
-  .contents .navbar .nav_right .btn_wrap {
-    padding: 0;
-  }
-}
-.contents .navbar .nav_left .btn_wrap.needflex,
-.contents .navbar .nav_right .btn_wrap.needflex {
-  justify-content: space-evenly;
-}
-@media screen and (max-width: 480px) {
-  .contents .navbar .nav_left .btn_wrap.needflex,
-  .contents .navbar .nav_right .btn_wrap.needflex {
-    gap: 0;
-  }
-}
-.contents .navbar .nav_left .btn_wrap.needflex button,
-.contents .navbar .nav_right .btn_wrap.needflex button {
-  width: 100%;
-  max-width: 100px;
-  height: 100%;
-}
-@media screen and (max-width: 480px) {
-  .contents .navbar .nav_left .btn_wrap {
-    padding-right: 10px;
-  }
-}
-@media screen and (max-width: 480px) {
-  .contents .navbar .nav_right .btn_wrap {
-    padding-left: 10px;
-  }
-}
-.contents .navbar .nav_btn {
-  width: 90px;
-}
-@media screen and (max-width: 480px) {
-  .contents .navbar .nav_btn {
-    width: 60px;
-  }
-}
-@media screen and (max-width: 320px) {
-  .contents .navbar .nav_btn {
-    width: 45px;
-  }
-}
-.contents .navbar .nav_btn span {
+.contents .navbar .btn_wrap .nav_btn span {
   display: block;
   font-size: 1.125rem;
+  color: #000;
 }
-@media screen and (max-width: 480px) {
-  .contents .navbar .nav_btn img {
-    width: 45px;
-  }
-}
-@media screen and (max-width: 360px) {
-  .contents .navbar .nav_btn img {
-    width: 30px;
-  }
-}
-.contents .navbar .nav_btn.home {
-  width: 100px;
-  height: 100%;
+.contents .navbar .btn_wrap .nav_btn.home {
   border-radius: 50%;
   background: url(../images/nav_icn_00.svg) no-repeat center center;
-  background-size: 100px;
+  background-size: 80px;
   z-index: 2;
 }
 @media screen and (max-width: 480px) {
-  .contents .navbar .nav_btn.home {
-    width: 75px;
-    background-size: 75px;
+  .contents .navbar .btn_wrap .nav_btn.home {
+    background-size: 60px;
   }
 }
 @media screen and (max-width: 320px) {
-  .contents .navbar .nav_btn.home {
-    width: 60px;
-    background-size: unset;
+  .contents .navbar .btn_wrap .nav_btn.home {
+    background-size: 40px;
   }
 }
 
