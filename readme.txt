@@ -20,6 +20,8 @@
 
 *var(--vh,1vh)는 --vh변수가 있으면 변수값을 반환하고 변수값이 없다면 1vh를 반환합니다.
 
+현재 default.css 상에서 '100vh'로 설정되어 있는 값들을 'calc(var(--vh,1vh)*100)'로 변경해 놓은 상태입니다.
+
 
 4. 'common/css'폴더에 'additional_info.css','coming_soon.css','guest_access.css','start.css'는 가장 최근 개발 작업에서 제가 단독으로 생성한 css입니다. 기존 css틀에서 해당 페이지들에 대한 스타일이 잡히면 삭제되어도 무방합니다.
 
