@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
+        <title></title>
+        <link rel="stylesheet" href="../common/css/default.css" />
+        <link rel="stylesheet" href="../common/css/aos.css" />
+        <link rel="stylesheet" href="../common/css/swiper-bundle.min.css" />
+        <link rel="stylesheet" href="../common/css/nice-select.css" />
+        <script src="../common/js/jquery-3.6.0.min.js"></script>
+        <script src="../common/js/aos.js"></script>
+        <script src="../common/js/swiper-bundle.min.js"></script>
+        <script src="../common/js/common.js"></script>
+        <script src="../common/js/jquery.nice-select.min.js"></script>
+    </head>
+    <body>
+        <div class="wrapper">
+            <div class="skip_navi">
+                <strong class="hide">바로가기 메뉴</strong>
+                <a href="#contents">본문 바로가기</a>
+                <a href="#gnb">주메뉴 바로가기</a>
+            </div>
+            <div class="bg_pc"></div>
+            <div class="contents">
+                <section class="main">
+                    <header class="needflex">
+                        <div class="container needflex">
+                            <div class="header_l">
+                                <button class="header_back_btn gray"></button>
+                            </div>
+                            <div class="header_c">
+                                <h1><img src="../common/images/header_logo.svg" alt="쏘댕기기 메인 로고" /></h1>
+                            </div>
+                            <div class="header_r"></div>
+                        </div>
+                    </header>
+                    <div class="formwrap signin">
+                        <div class="container">
+                            <div class="complete">
+                                <img src="../common/images/signin_com.png" alt="웃고있는 동자승 조각상" />
+                                <p class="textwrap">
+                                    <b>회원가입이 완료되었습니다</b>
+                                    <span>다양한 활동으로 불교를 경험해보세요</span>
+                                </p>
+                            </div>
+                            <div class="buttonwrap">
+                                <button class="btn00">시작하기</button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+        <script>
+            $(document).ready(function () {
+                $("select").niceSelect();
+
+                $("#chk_all").change(function () {
+                    if ($("#chk_all").is(":checked")) {
+                        $(".chk_part").prop("checked", true);
+                    } else {
+                        $(".chk_part").prop("checked", false);
+                    }
+                });
+            });
+        </script>
+    </body>
+</html>

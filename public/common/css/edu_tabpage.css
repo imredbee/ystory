@@ -1,0 +1,55 @@
+body {font-size: 20px;}
+
+ul#lecture-list {position: relative; display: block; width: 100%;}
+ul#lecture-list li { position: relative; display: block;  border-radius: initial; padding: 0; height: 100px; width: 100%; margin-bottom: 25px; }
+ul#lecture-list li:first-of-type {margin-top: 5px;}
+ul#lecture-list li a {display: grid; width:100%; grid-template-columns: 178.23px auto; position :initial; border-radius: 5px;}
+
+ul#lecture-list li a figure { padding:0; display:block; position :relative; width: 100%;}
+ul#lecture-list li a figure img {position : initial; display: block; width: 100%;}
+ul#lecture-list li a div {
+    display: block; 
+    padding: 0px 10px 0px 10px; 
+    width: 100%; 
+    position :initial; 
+    flex-direction: initial;
+    align-items: initial;
+    justify-content: initial;
+    gap: initial;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    font-size: 20px;
+}
+
+ul#lecture-list li a div p {display: block; width: 100%; height: 90px; padding: 10px 0; overflow: hidden; text-overflow: ellipsis; text-align: left; font-size: 25px;}
+
+ul#lecture-list li a figure span {
+    display: block;
+    padding: 3px 4px 2px 4px;
+    border-radius: 7px;
+    position: absolute;
+    color: white;
+    bottom: 1px;
+    right: 1px;
+    text-align: right;
+    max-width: initial;
+    background-color: black;
+    font-size: 16px;
+}
+
+ul#lecture-list li span.numbering_box {
+    display: block;
+    width: 30px;
+    height: 30px;
+    border-radius: 15px;
+    background-color: #FFD04D;
+    color:black;
+    font-size : 20px;
+    font-weight:600;
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    text-align: center;
+    box-shadow: 0px 3px 3px 0px rgba(0, 0, 0, 0.70);
+    line-height: 30px;
+}

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>회원 전용 기능 안내</title>
+    <link rel="stylesheet" href="../common/css/guest_access.css">
+    <script src="../common/js/vhSetting.js"></script>
+</head>
+<body>
+    <div class="guest-access-container">
+        <div class="message">
+            <h1>앗, 잠깐만요!</h1>
+            <p>선택하신 기능은 회원 전용 기능입니다.</p>
+            <p>더 많은 서비스를 이용하시려면 </p>
+            <p>카카오톡 계정으로 로그인해 주세요.</p>
+        </div>
+        <div class="login-button">
+            <!-- 카카오톡 연동 로그인 버튼, 실제 연동 URL로 변경해 주세요. -->
+            <button onclick="location.href='/auth/kakao'">카카오톡으로 로그인하기</button>
+        </div>
+    </div>
+</body>
+</html>
