@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
+    <title></title>
+    <link rel="stylesheet" href="../common/css/default.css" />
+    <link rel="stylesheet" href="../common/css/aos.css" />
+    <link rel="stylesheet" href="../common/css/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="../common/css/edu_tabpage.css" />
+    <script src="../common/js/jquery-3.6.0.min.js"></script>
+    <!-- <script src="../common/js/aos.js"></script> -->
+    <script src="../common/js/swiper-bundle.min.js"></script>
+    <script src="../common/js/vhSetting.js"></script>
+    <!-- <script src="../common/js/common.js"></script> -->
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="skip_navi">
+            <strong class="hide">바로가기 메뉴</strong>
+            <a href="#contents">본문 바로가기</a>
+            <a href="#gnb">주메뉴 바로가기</a>
+        </div>
+        <div class="bg_pc"></div>
+        <div class="contents">
+            <section class="main">
+                <header class="needflex">
+                    <div class="container needflex">
+                        <div class="header_l">
+                            <ul>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                            </ul>
+                        </div>
+                        <div class="header_c">
+                            <h1><img src="../common/images/header_logo.svg" alt="쏘댕기기 메인 로고" /></h1>
+                        </div>
+                        <div class="header_r"></div>
+                    </div>
+                </header>
+                <div class="eduwrap">
+                    <!-- 탭 리스트 -->
+                    <div class="swiperTab sticky_rsz">
+                        <ul class="tab_list needflex swiper-wrapper">
+                            <% subjects.forEach(subject=> { %>
+                                <li class="swiper-slide">
+                                    <a>
+                                        <button onclick="loadLectures('<%= subject.subjectId %>', event)">
+                                            <%= subject.subjectName %>
+                                        </button>
+                                    </a>
+                                </li>
+                            <% }); %>
+                        </ul>
+                    </div>
+                    <!-- 탭 컨텐츠 -->
+                    <!-- 탭 컨텐츠 -->
+                    <div class="tabview_list">
+                        <!-- 컨텐츠 1 -->
+                        <ul id="lecture-list" class="active">
+                            <% if (lectures.length === 0) { %>
+                                <div style='text-align: center; margin: 100px auto;'>
+                                    <img src='/comingSoonImg' alt='본 강의는 준비중입니다' style='width: 55%;'/>
+                                </div>
+                            <% } else { 
+                                lectures.forEach((lecture, index) => { %>
+                                    <li>
+                                        <a target="_blank" href="<%= lecture.youtubeUrl %>" class="needflex">
+                                            <figure>
+                                                <img src="<%= lecture.thumbnailUrl %>" alt="" />
+                                                <span class="ells">
+                                                    <%= lecture.duration %>
+                                                </span>
+                                            </figure>
+                                            <div class="textwrap needflex">
+                                                <p>
+                                                    <%= lecture.title %>
+                                                </p>
+                                            </div>
+                                        </a>
+                                        <span class="numbering_box"><%= index + 1 %></span>
+                                    </li>
+                                <% });
+                            } %>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            <nav class="navbar">
+                <div class="btn_wrap needflex">
+                    <button onclick="location.href='/comingsoon'" class="nav_btn myPage needflex">
+                        <span class="bgwrap"></span>
+                        <!-- <figure><img src="../common/images/nav_icn_01.png" alt="" /></figure> -->
+                        <span>내 정보</span>
+                    </button>
+                    <button onclick="location.href='/comingsoon'" class="nav_btn myFriends needflex">
+                        <span class="bgwrap"></span>
+                        <!-- <figure><img src="../common/images/nav_icn_02.png" alt="" /></figure> -->
+                        <span>친구</span>
+                    </button>
+                    <button onclick="location.href='/home'" class="nav_btn home"></button>
+                    <button onclick="location.href='/comingsoon'" class="nav_btn myHistory needflex">
+                        <span class="bgwrap"></span>
+                        <!-- <figure><img src="../common/images/nav_icn_03.png" alt="" /></figure> -->
+                        <span>내강의실</span>
+                    </button>
+                    <button onclick="location.href='/comingsoon'" class="nav_btn myCart needflex">
+                        <span class="bgwrap"></span>
+                        <!-- <figure><img src="../common/images/nav_icn_04.png" alt="" /></figure> -->
+                        <span>장바구니</span>
+                    </button>
+                </div>
+            </nav>
+
+        </div>
+    </div>
+            <script>
+                var swiperTab = new Swiper(".swiperTab", {
+                    slidesPerView: "auto",
+                    freeMode: true,
+                    spaceBetween: 20,
+                    speed: 1000,
+                });
+
+                function loadLectures(subjectId, event) {
+
+                    document.querySelectorAll('.tab_list .swiper-slide').forEach(slide => {
+                    slide.classList.remove('active');
+                    });
+
+                    // 클릭된 버튼에 'active' 클래스 추가
+                    event.currentTarget.parentNode.parentNode.classList.add('active');
+
+                    fetch(`/lectures/${subjectId}`)
+                        .then(response => {
+                            if (!response.ok) {
+                                throw new Error('서버 오류 발생');
+                            }
+                            return response.json();
+                        })
+                        .then(lectures => {
+                            const lectureListElement = document.getElementById('lecture-list');
+                            lectureListElement.innerHTML = ''; // 기존 목록 초기화
+
+                            if (lectures.length == 0) {
+                                const comingSoonBox = document.createElement('div');
+                                comingSoonBox.innerHTML =`
+                                    <img src= '/comingSoonImg' alt='본 강의는 준비중입니다' style='display: block; margin: 100px auto; width: 55%;'/>
+                                `;
+                                lectureListElement.appendChild(comingSoonBox);
+                            }
+                            else{
+                                lectures.forEach((lecture, index) => {
+                                const lectureElement = document.createElement('li');
+                                lectureElement.innerHTML = `
+                                    <a href="${lecture.youtubeUrl}" class="needflex">
+                                        <figure>
+                                            <img src="${lecture.thumbnailUrl}" alt="" />
+                                            <span class="ells">${lecture.duration}</span>
+                                        </figure>
+                                        <div class="textwrap needflex">
+                                            <p>${lecture.title}</p>
+                                        </div>
+                                        <span class="numbering_box">${index+1}</span>                            
+                                    </a>    
+                                `;
+                                lectureListElement.appendChild(lectureElement);
+                                });
+                            }
+                        })
+                        .catch(error => {
+                            console.error('강의 목록을 불러오는데 실패했습니다:', error);
+                        });
+                }
+
+            </script>
+</body>
+
+</html>

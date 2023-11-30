@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/dashboard.css">
+    <title>학습 대시보드</title>
+</head>
+<body>
+    <header>
+        <h1>나의 학습 대시보드</h1>
+    </header>
+    <div class="your_tier">
+        <img src="your_tier_image.jpg" alt="현재 나의 학습 티어 이미지">
+        <img src="your_tier_image.jpg" alt="다음 단계 학습 티어 이미지">
+    </div>
+    <div class="subject-list">
+        <h2>수강중인 과목 리스트</h2>
+        <ul>
+            <li>
+                <span class="subject-name">과목 1</span>
+                <p>진척도 : <span class='personal_lecture_count'>12</span>/<span class='this_total_lecture_count'>20</span></p>
+                <button class="details-button">자세히보기</button>
+                <div class="details">
+                                        <ul class="lecture-list">
+                        <li>강의 1</li>
+                        <li>강의 2</li>
+                        <li>강의 3 (미수강)</li>
+                    </ul>
+                    <button class="go-to-course-button">강의 바로 가기</button>
+                </div>
+            </li>
+            <li>
+                <span class="subject-name">과목 2</span>
+                <p>진척도 : <span class='personal_lecture_count'>9</span>/<span class='this_total_lecture_count'>20</span></p>
+                <button class="details-button">자세히보기</button>
+                <div class="details">
+                    <ul class="lecture-list">
+                        <li>강의 1</li>
+                        <li>강의 2 (미수강)</li>
+                        <li>강의 3</li>
+                    </ul>
+                    <button class="go-to-course-button">강의 바로 가기</button>
+                </div>
+            </li>
+        </ul>
+    </div>
+
+    <script src="js/dashboard.js"></script>
+</body>
+</html>

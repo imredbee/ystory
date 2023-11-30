@@ -1,0 +1,11 @@
+/*메인페이지 반응형*/
+@include minWidth($m721) {
+    .wrapper .mo {
+        display: none;
+    }
+}
+@include maxWidth($m720) {
+    .wrapper .pc {
+        display: none;
+    }
+}

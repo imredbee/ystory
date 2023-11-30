@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>추가 정보 입력</title>
+    <link rel="stylesheet" href="../common/css/additional_info.css">
+    <script src="../common/js/vhSetting.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="progress-bar">
+            <div class="progress" id="progress">1/6완료</div>
+        </div>
+        <div class="form-container">
+            <form id="additionalInfoForm">
+                <div class="step agree active">
+                    <h2>개인정보 처리 방침 동의</h2>
+                    <textarea readonly>개인정보 처리 방침 내용...</textarea>
+                    <label>
+                        <input type="checkbox" id="agree" name="agree" required> 개인정보 처리방침에 동의합니다.
+                    </label>
+                    <div class='btn_box'>
+                        <button type="button" class="next-btn">다음 단계</button>
+                    </div>
+                </div>
+
+                <div class="step name ">
+                    <h2>이름 입력</h2>
+                    <input type="text" placeholder="이름" id="name" name="name" required>
+                    <div class='btn_box'>
+                        <button type="button" class="prev-btn">이전 단계</button>
+                        <button type="button" class="next-btn">다음 단계</button>
+                    </div>
+                </div>
+
+                <div class="step gender">
+                    <h2>성별 선택</h2>
+                    <label>
+                        <input type="radio" name="gender" value="female" required> 여성
+                    </label>
+                    <label>
+                        <input type="radio" name="gender" value="male"> 남성
+                    </label>
+                    <div class='btn_box'>
+                        <button type="button" class="prev-btn">이전 단계</button>
+                        <button type="button" class="next-btn">다음 단계</button>
+                    </div>
+                </div>
+                <div class="step phone">
+                    <h2>연락처 입력</h2>
+                    <input type="text" placeholder="010-0000-0000" id="phone" name="phone" required>
+                    <div class='btn_box'>
+                        <button type="button" class="prev-btn">이전 단계</button>
+                        <button type="button" class="next-btn">다음 단계</button>
+                    </div>
+                </div>
+                <div class="step nickname">
+                    <h2>닉네임 입력</h2>
+                    <input type="text" placeholder="닉네임" id="nickname" name="nickname" required>
+                    <div class='btn_box'>
+                        <button type="button" class="prev-btn">이전 단계</button>
+                        <button type="button" class="next-btn">다음 단계</button>
+                    </div>
+                </div>
+                <div class="step birthday">
+                    <h2>생일 입력</h2>
+                    <label for="year">연도</label>
+                    <input type="text" id="year" name="year" placeholder="YYYY" pattern="\d{4}">
+
+                    <label for="month">월</label>
+                    <input type="text" id="month" name="month" placeholder="MM" pattern="\d{1,2}">
+
+                    <label for="day">일</label>
+                    <input type="text" id="date" name="date" placeholder="DD" pattern="\d{1,2}">
+
+                    <div class='btn_box'>
+                        <button type="button" class="prev-btn">이전 단계</button>
+                        <button type="submit" class="submit-btn">제출합니다</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="../common/js/additional_info.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const steps = document.querySelectorAll(".step");
+            const nextBtns = document.querySelectorAll(".next-btn");
+            const form = document.getElementById("additionalInfoForm");
+            const prevBtns = document.querySelectorAll(".prev-btn");
+            const kakaoId = JSON.parse('<%- kakaoId %>');
+            let currentStep = 0;
+
+            nextBtns.forEach((btn, index) => {
+                btn.addEventListener("click", () => {
+                    steps[currentStep].classList.remove("active");
+                    currentStep = (currentStep + 1) % steps.length;
+                    steps[currentStep].classList.add("active");
+                    updateProgressBar();
+                });
+            });
+
+            prevBtns.forEach((btn, index) => {
+                btn.addEventListener("click", () => {
+                    if (currentStep > 0) {
+                        steps[currentStep].classList.remove("active");
+                        currentStep = (currentStep - 1) % steps.length;
+                        steps[currentStep].classList.add("active");
+                        updateProgressBar();
+                    }
+                });
+            });
+
+            function updateProgressBar() {
+                const progress = document.getElementById("progress");
+                progress.style.width = (((currentStep+1) / (steps.length)) * 100) + "%";
+                progress.innerHTML = ``
+
+                progress.innerHTML = `
+                ${currentStep+1}/${steps.length}완료
+                `
+            }
+
+            form.addEventListener('submit', function(event) {
+
+                event.preventDefault(); // 기본 폼 제출 동작 방지
+                
+                const formData = new FormData(this);
+                const userData = {
+                    kakaoId : kakaoId,
+                    agree : formData.get('agree'),
+                    name: formData.get('name'),
+                    gender: formData.get('gender'),
+                    phone: formData.get('phone'),
+                    nickname: formData.get('nickname'),
+                    birthYear: formData.get('year'),
+                    birthMonth: formData.get('month'),
+                    birthDate: formData.get('date'),
+                };
+
+                // 데이터 검증 및 처리 로직
+                console.log(userData);
+                // alert("정보가 제출되었습니다!");
+
+                // AJAX를 사용하여 서버로 데이터 전송
+                fetch('/submit-user-data', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(userData)
+                }).then(response => response.json())
+                    .then(data => {
+                        console.log('Success:', data);
+                        window.location.href='/start';
+                        // 여기에 성공시 로직 추가 (예: 페이지 리다이렉트)
+                    })
+                    .catch((error) => {
+                        console.error('Error:', error);
+                    });
+                });
+        });
+
+            // form.addEventListener("submit", (e) => {
+            //     e.preventDefault();
+            //     // TODO: 폼 제출 로직 추가
+            //     console.log(e);
+            //     alert("정보가 제출되었습니다!");
+            // });
+
+
+
+    </script>
+</body>
+</html>

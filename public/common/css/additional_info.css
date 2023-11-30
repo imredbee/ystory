@@ -1,0 +1,116 @@
+body {
+    font-family: 'Noto Sans KR', sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+div.btn_box { position: absolute; bottom:5px; left:0; width: 100%; text-align: center; margin-top: 5px;}
+
+button {
+    width:49%;
+    font-size: 30px; font-weight: 600;
+    line-height: 80px;
+    background-color: #ffd04d;
+    color: #000;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+
+    cursor: pointer;
+}
+
+.container {
+    position: relative;
+    height: 880px;
+    width: 90%;
+    max-width: 680px;
+    margin: 0 5%;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    text-align: center;
+}
+
+.progress-bar {
+    background: #ddd;
+    margin-bottom: 20px;
+    border-radius: 5px;
+}
+
+.progress {
+    height: 60px;
+    background: #ffd04d;
+    width: 16.666%;
+    border-radius: 5px;
+    text-align: right;
+    font-size: 30px;
+    line-height: 60px;
+    font-weight: 600;
+    padding-right: 10px;
+}
+
+.form-container {
+    height: 680px;
+    background: #fff;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+.step {
+    display: none;
+    margin : 0 auto;
+    width: 100%;
+}
+
+.step.active {
+    display: block;
+}
+
+
+
+button:hover {
+    background: #555;
+}
+
+div.step h2 { 
+    font-size: 60px;
+    width: 100%;
+    height: 120px;
+    margin: 20px auto;
+}
+div.step input { 
+    display: block;
+    margin: 50px auto;
+    padding:1px;
+    width: 350px;
+    height: 49px;
+    font-size: 40px;
+    text-align: center;
+
+}
+div.step.agree h2 { 
+    font-size: 60px;
+    width: 100%;
+    margin: 0;
+}
+div.step.agree textarea { display: block; width: 80%; margin: 0 auto 20px auto; height: 200px; font-size: 30px; overflow: scroll;}
+div.step.agree label {display: block; margin: 0 auto 20px auto; font-size: 30px; height: 35px;}
+div.step.agree label input { display: inline-block; width: 30px; height: 30px; margin: 0;}
+
+
+div.step.gender label { display: block; width: 100%; font-size: 40px; text-align: center;}
+div.step.gender label input { display: inline-block; width: 30px; height: 30px;}
+
+div.step.birthday label {display: block; margin: 0 auto 20px auto; font-size: 30px; height: 35px;}
+div.step.birthday input { margin: 20px auto;}
+
+div.progress {
+
+}
