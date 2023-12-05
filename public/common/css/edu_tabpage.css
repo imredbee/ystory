@@ -9,7 +9,7 @@ ul#lecture-list li a figure { padding:0; display:block; position :relative; widt
 ul#lecture-list li a figure img {position : initial; display: block; width: 100%;}
 ul#lecture-list li a div {
     display: block; 
-    padding: 0px 10px 0px 10px; 
+    padding: 13px 10px; 
     width: 100%; 
     position :initial; 
     flex-direction: initial;
@@ -21,7 +21,7 @@ ul#lecture-list li a div {
     font-size: 20px;
 }
 
-ul#lecture-list li a div p {display: block; width: 100%; height: 90px; padding: 10px 0; overflow: hidden; text-overflow: ellipsis; text-align: left; font-size: 25px;}
+ul#lecture-list li a div p {display: -webkit-box; max-width: 100%; overflow: hidden; text-overflow: ellipsis; -webkit-line-clamp: 2; -webkit-box-orient: vertical; text-align: left; font-size: 18px;}
 
 ul#lecture-list li a figure span {
     display: block;

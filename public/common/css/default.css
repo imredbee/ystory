@@ -302,7 +302,7 @@ a:link.inverse {
 
 body.fixing {
   width: 100vw;
-  height: calc(var(--vh, 1vh) * 100);
+  height: 100vh;
   overflow: hidden;
 }
 
@@ -529,7 +529,7 @@ body {
 
 .wrapper {
   width: 100vw;
-  height: calc(var(--vh, 1vh) * 100);
+  height: 100vh;
   position: relative;
 }
 @media screen and (min-width: 1025px) {
@@ -574,6 +574,28 @@ body {
   font-family: "preten-sb";
 }
 
+.alert-wrap {
+  padding: 30px 10px;
+}
+.alert-wrap .message {
+  margin-bottom: 20px;
+}
+.alert-wrap .message h1 {
+  font-size: 1.5em;
+  font-family: "preten-sb";
+  margin-bottom: 10px;
+}
+.alert-wrap .message p {
+  font-size: 1.2em;
+}
+.alert-wrap button {
+  background: #ffd04d;
+  color: #000;
+  border-radius: 10px;
+  font-family: "preten-sb";
+  margin: 0;
+}
+
 .contents {
   max-width: 640px;
   width: 100%;
@@ -592,13 +614,25 @@ body {
 }
 .contents header {
   width: 100%;
+  height: 100px;
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
   position: sticky;
   top: 0;
   background: #fff;
   z-index: 999;
-  padding-bottom: 7px;
-  height: 50px;
+  padding-bottom: 17px;
+}
+@media screen and (max-width: 480px) {
+  .contents header {
+    padding-bottom: 10px;
+    height: 75px;
+  }
+}
+@media screen and (max-width: 320px) {
+  .contents header {
+    padding-bottom: 7px;
+    height: 50px;
+  }
 }
 .contents header.needflex {
   flex-direction: column;
@@ -608,20 +642,50 @@ body {
   align-items: center;
 }
 .contents header .container .header_l {
-  width: 30px;
-  height: 30px;
+  width: 60px;
+  height: 60px;
+}
+@media screen and (max-width: 480px) {
+  .contents header .container .header_l {
+    width: 40px;
+    height: 40px;
+  }
+}
+@media screen and (max-width: 320px) {
+  .contents header .container .header_l {
+    width: 30px;
+    height: 30px;
+  }
 }
 .contents header .container .header_l .header_hmbg_btn {
   width: 100%;
   height: 100%;
   background: url(../images/header_hmbg_btn.png) no-repeat center center;
-  background-size: 30px !important;
+}
+@media screen and (max-width: 480px) {
+  .contents header .container .header_l .header_hmbg_btn {
+    background-size: 40px !important;
+  }
+}
+@media screen and (max-width: 320px) {
+  .contents header .container .header_l .header_hmbg_btn {
+    background-size: 30px !important;
+  }
 }
 .contents header .container .header_l .header_back_btn {
   width: 100%;
   height: 100%;
   background: url(../images/header_back_icn.png) no-repeat center center;
-  background-size: 30px !important;
+}
+@media screen and (max-width: 480px) {
+  .contents header .container .header_l .header_back_btn {
+    background-size: 40px !important;
+  }
+}
+@media screen and (max-width: 320px) {
+  .contents header .container .header_l .header_back_btn {
+    background-size: 30px !important;
+  }
 }
 .contents header .container .header_l .header_back_btn.black {
   background: url(../images/header_back_icn_b.png) no-repeat center center;
@@ -636,7 +700,17 @@ body {
   transform: translateX(-50%);
 }
 .contents header .container .header_c h1 img {
-  width: 130px;
+  width: 260px;
+}
+@media screen and (max-width: 480px) {
+  .contents header .container .header_c h1 img {
+    width: 200px;
+  }
+}
+@media screen and (max-width: 320px) {
+  .contents header .container .header_c h1 img {
+    width: 130px;
+  }
 }
 .contents header.poab {
   position: absolute;
@@ -663,7 +737,7 @@ body {
 }
 .contents .preloginwrap {
   width: 100%;
-  height: calc(var(--vh, 1vh) * 100);
+  height: 100vh;
   background: url(../images/prelogin_bg.jpg) no-repeat center center;
   background-size: 100%;
 }
@@ -754,7 +828,7 @@ body {
 }
 .contents .main {
   overflow-x: hidden;
-  min-height: calc(var(--vh, 1vh) * 100);
+  min-height: 100vh;
   padding-bottom: 140px;
 }
 @media screen and (max-width: 480px) {
@@ -1178,18 +1252,18 @@ body {
   background-size: contain;
 }
 .contents .main .viewpagewrap {
-  height: calc(var(--vh, 1vh) * 100 - 140px);
+  height: calc(100vh - 140px);
   overflow: hidden;
   position: relative;
 }
 @media screen and (max-width: 480px) {
   .contents .main .viewpagewrap {
-    height: calc(var(--vh, 1vh) * 100 - 100px);
+    height: calc(100vh - 100px);
   }
 }
 @media screen and (max-width: 320px) {
   .contents .main .viewpagewrap {
-    height: calc(var(--vh, 1vh) * 100 - 85px);
+    height: calc(100vh - 85px);
   }
 }
 .contents .main .viewpagewrap.act01 {
@@ -1685,7 +1759,7 @@ body {
 }
 .contents .main .popup.full {
   width: 100vw;
-  height: calc(var(--vh, 1vh) * 100);
+  height: 100vh;
 }
 .contents .main .popup.popped {
   display: block;
@@ -2054,51 +2128,124 @@ body {
   bottom: 0;
   width: 100%;
   max-width: 640px;
-  height: 60px;
-  padding-top: 10px;
-  padding-bottom: 12px;
+  height: 120px;
   z-index: 999;
   background: #fff;
   box-shadow: 0px -5px 4px 0px rgba(0, 0, 0, 0.25);
+  padding-top: 16px;
+  padding-bottom: 24px;
+}
+@media screen and (max-width: 480px) {
+  .contents .navbar {
+    height: 90px;
+    padding-top: 12px;
+    padding-bottom: 18px;
+  }
+}
+@media screen and (max-width: 320px) {
+  .contents .navbar {
+    height: 60px;
+    padding-top: 8px;
+    padding-bottom: 12px;
+  }
 }
 .contents .navbar .btn_wrap {
   height: 100%;
+  padding: 0 40px;
+}
+@media screen and (max-width: 640px) {
+  .contents .navbar .btn_wrap {
+    padding: 0 30px;
+  }
+}
+@media screen and (max-width: 480px) {
+  .contents .navbar .btn_wrap {
+    padding: 0 20px;
+  }
 }
 .contents .navbar .btn_wrap.needflex {
-  justify-content: space-evenly;
+  justify-content: center;
   align-items: stretch;
+}
+.contents .navbar .btn_wrap.needflex {
+  justify-content: space-between;
 }
 .contents .navbar .btn_wrap.needflex button img {
   height: 40px;
 }
-.contents .navbar .btn_wrap.needflex button .bgwrap {
-  margin-bottom: 3px;
-}
 .contents .navbar .btn_wrap.needflex button.myPage .bgwrap {
   background: url(../images/nav_icn_01.png) no-repeat center center;
-  background-size: auto 20px;
+}
+@media screen and (max-width: 480px) {
+  .contents .navbar .btn_wrap.needflex button.myPage .bgwrap {
+    background-size: auto 30px;
+  }
+}
+@media screen and (max-width: 320px) {
+  .contents .navbar .btn_wrap.needflex button.myPage .bgwrap {
+    background-size: auto 20px;
+  }
 }
 .contents .navbar .btn_wrap.needflex button.myFriends .bgwrap {
   background: url(../images/nav_icn_02.png) no-repeat center center;
-  background-size: auto 20px;
+}
+@media screen and (max-width: 480px) {
+  .contents .navbar .btn_wrap.needflex button.myFriends .bgwrap {
+    background-size: auto 30px;
+  }
+}
+@media screen and (max-width: 320px) {
+  .contents .navbar .btn_wrap.needflex button.myFriends .bgwrap {
+    background-size: auto 20px;
+  }
 }
 .contents .navbar .btn_wrap.needflex button.myHistory .bgwrap {
   background: url(../images/nav_icn_03.png) no-repeat center center;
-  background-size: auto 20px;
+}
+@media screen and (max-width: 480px) {
+  .contents .navbar .btn_wrap.needflex button.myHistory .bgwrap {
+    background-size: auto 30px;
+  }
+}
+@media screen and (max-width: 320px) {
+  .contents .navbar .btn_wrap.needflex button.myHistory .bgwrap {
+    background-size: auto 20px;
+  }
 }
 .contents .navbar .btn_wrap.needflex button.myCart .bgwrap {
   background: url(../images/nav_icn_04.png) no-repeat center center;
-  background-size: auto 20px;
+}
+@media screen and (max-width: 480px) {
+  .contents .navbar .btn_wrap.needflex button.myCart .bgwrap {
+    background-size: auto 30px;
+  }
+}
+@media screen and (max-width: 320px) {
+  .contents .navbar .btn_wrap.needflex button.myCart .bgwrap {
+    background-size: auto 20px;
+  }
 }
 .contents .navbar .btn_wrap .nav_btn {
-  width: 40px;
-  height: 40px;
+  width: 80px;
+  height: 80px;
   color: #000;
 }
 .contents .navbar .btn_wrap .nav_btn.needflex {
   flex-direction: column;
   justify-content: end;
   align-items: center;
+}
+@media screen and (max-width: 480px) {
+  .contents .navbar .btn_wrap .nav_btn {
+    width: 60px;
+    height: 60px;
+  }
+}
+@media screen and (max-width: 320px) {
+  .contents .navbar .btn_wrap .nav_btn {
+    width: 40px;
+    height: 40px;
+  }
 }
 .contents .navbar .btn_wrap .nav_btn .bgwrap {
   display: block;
@@ -2107,7 +2254,7 @@ body {
 }
 .contents .navbar .btn_wrap .nav_btn span {
   display: block;
-  font-size: 12px;
+  font-size: 1.125rem;
   color: #000;
 }
 .contents .navbar .btn_wrap .nav_btn.home {
@@ -2115,7 +2262,16 @@ body {
   background: url(../images/nav_icn_00.svg) no-repeat center center;
   background-size: 80px;
   z-index: 2;
-  background-size: 40px;
+}
+@media screen and (max-width: 480px) {
+  .contents .navbar .btn_wrap .nav_btn.home {
+    background-size: 60px;
+  }
+}
+@media screen and (max-width: 320px) {
+  .contents .navbar .btn_wrap .nav_btn.home {
+    background-size: 40px;
+  }
 }
 
 .skip_navi {
