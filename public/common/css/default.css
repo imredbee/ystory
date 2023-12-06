@@ -527,6 +527,8 @@ body.fixing {
 
 body {
   height: 100vh;
+  height: -webkit-fill-available;
+  height: -moz-available;
   height: fill-available;
   height: 100dvh;
   overflow: auto;
@@ -536,6 +538,7 @@ body {
 .wrapper {
   width: 100vw;
   height: 100vh;
+  height: 100dvh;
   position: relative;
 }
 @media screen and (min-width: 1025px) {
