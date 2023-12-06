@@ -110,9 +110,12 @@ body {
 
 html {
   font-size: 100%;
+  height: -webkit-fill-available;
 }
 
 body {
+  min-height: 100vh;
+  min-height: -webkit-fill-available;
   font-size: 1rem;
   line-height: 1.4;
   color: #222;
@@ -523,6 +526,9 @@ body.fixing {
 }
 
 body {
+  height: 100vh;
+  height: fill-available;
+  height: 100dvh;
   overflow: auto;
   font-family: "preten-r";
 }
@@ -1012,8 +1018,8 @@ body {
   padding: 0 10px;
 }
 .contents .main .items.item01.swiperActivity .swiper-util .swiper-pagination .swiper-pagination-bullet {
-  width: 20px;
-  height: 20px;
+  width: 10px;
+  height: 10px;
   margin: 0;
 }
 @media screen and (max-width: 320px) {
@@ -1421,7 +1427,7 @@ body {
   border: 2px solid #ffd04d;
 }
 .contents .main .eduwrap .swiperTab .tab_list li a {
-  padding: 10px 30px;
+  padding: 5px 25px;
 }
 .contents .main .eduwrap .tabview_list {
   padding: 10px 30px 60px;
@@ -2135,14 +2141,14 @@ body {
   padding-top: 16px;
   padding-bottom: 24px;
 }
-@media screen and (max-width: 480px) {
+/* @media screen and (max-width: 480px) {
   .contents .navbar {
     height: 90px;
     padding-top: 12px;
     padding-bottom: 18px;
   }
-}
-@media screen and (max-width: 320px) {
+} */
+@media screen and (max-width: 480px) {
   .contents .navbar {
     height: 60px;
     padding-top: 8px;
@@ -2151,18 +2157,18 @@ body {
 }
 .contents .navbar .btn_wrap {
   height: 100%;
-  padding: 0 40px;
+  padding: 0 30px;
 }
-@media screen and (max-width: 640px) {
+/* @media screen and (max-width: 640px) {
   .contents .navbar .btn_wrap {
     padding: 0 30px;
   }
-}
-@media screen and (max-width: 480px) {
+} */
+/* @media screen and (max-width: 480px) {
   .contents .navbar .btn_wrap {
     padding: 0 20px;
   }
-}
+} */
 .contents .navbar .btn_wrap.needflex {
   justify-content: center;
   align-items: stretch;
@@ -2176,12 +2182,12 @@ body {
 .contents .navbar .btn_wrap.needflex button.myPage .bgwrap {
   background: url(../images/nav_icn_01.png) no-repeat center center;
 }
-@media screen and (max-width: 480px) {
+/* @media screen and (max-width: 480px) {
   .contents .navbar .btn_wrap.needflex button.myPage .bgwrap {
     background-size: auto 30px;
   }
-}
-@media screen and (max-width: 320px) {
+} */
+@media screen and (max-width: 480px) {
   .contents .navbar .btn_wrap.needflex button.myPage .bgwrap {
     background-size: auto 20px;
   }
@@ -2189,12 +2195,12 @@ body {
 .contents .navbar .btn_wrap.needflex button.myFriends .bgwrap {
   background: url(../images/nav_icn_02.png) no-repeat center center;
 }
-@media screen and (max-width: 480px) {
+/* @media screen and (max-width: 480px) {
   .contents .navbar .btn_wrap.needflex button.myFriends .bgwrap {
     background-size: auto 30px;
   }
-}
-@media screen and (max-width: 320px) {
+} */
+@media screen and (max-width: 480px) {
   .contents .navbar .btn_wrap.needflex button.myFriends .bgwrap {
     background-size: auto 20px;
   }
@@ -2202,12 +2208,12 @@ body {
 .contents .navbar .btn_wrap.needflex button.myHistory .bgwrap {
   background: url(../images/nav_icn_03.png) no-repeat center center;
 }
-@media screen and (max-width: 480px) {
+/* @media screen and (max-width: 480px) {
   .contents .navbar .btn_wrap.needflex button.myHistory .bgwrap {
     background-size: auto 30px;
   }
-}
-@media screen and (max-width: 320px) {
+} */
+@media screen and (max-width: 480px) {
   .contents .navbar .btn_wrap.needflex button.myHistory .bgwrap {
     background-size: auto 20px;
   }
@@ -2215,12 +2221,12 @@ body {
 .contents .navbar .btn_wrap.needflex button.myCart .bgwrap {
   background: url(../images/nav_icn_04.png) no-repeat center center;
 }
-@media screen and (max-width: 480px) {
+/* @media screen and (max-width: 480px) {
   .contents .navbar .btn_wrap.needflex button.myCart .bgwrap {
     background-size: auto 30px;
   }
-}
-@media screen and (max-width: 320px) {
+} */
+@media screen and (max-width: 480px) {
   .contents .navbar .btn_wrap.needflex button.myCart .bgwrap {
     background-size: auto 20px;
   }
@@ -2235,13 +2241,13 @@ body {
   justify-content: end;
   align-items: center;
 }
-@media screen and (max-width: 480px) {
+/* @media screen and (max-width: 480px) {
   .contents .navbar .btn_wrap .nav_btn {
     width: 60px;
     height: 60px;
   }
-}
-@media screen and (max-width: 320px) {
+} */
+@media screen and (max-width: 480px) {
   .contents .navbar .btn_wrap .nav_btn {
     width: 40px;
     height: 40px;
@@ -2263,12 +2269,12 @@ body {
   background-size: 80px;
   z-index: 2;
 }
-@media screen and (max-width: 480px) {
+/* @media screen and (max-width: 480px) {
   .contents .navbar .btn_wrap .nav_btn.home {
     background-size: 60px;
   }
-}
-@media screen and (max-width: 320px) {
+} */
+@media screen and (max-width: 480px) {
   .contents .navbar .btn_wrap .nav_btn.home {
     background-size: 40px;
   }
