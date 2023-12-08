@@ -72,6 +72,28 @@ body {
         font-family: "preten-sb";
     }
 }
+
+.alert-wrap {
+    padding: 30px 10px;
+    .message {
+        h1 {
+            font-size: 1.5em;
+            font-family: 'preten-sb';
+            margin-bottom: 10px;
+        }
+        p {
+            font-size: 1.2em;
+        }
+        margin-bottom:20px;
+    }
+    button {
+        background: #ffd04d;
+        color: #000;
+        border-radius: 10px;
+        font-family: 'preten-sb';
+        margin: 0;
+    }
+}
 //콘텐츠 스타일
 .contents {
     max-width: 640px;

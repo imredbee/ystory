@@ -12,7 +12,6 @@
         <script src="../common/js/aos.js"></script>
         <script src="../common/js/swiper-bundle.min.js"></script>
         <script src="../common/js/common.js"></script>
-        <script src="../common/js/vhSetting.js"></script>
     </head>
     <body>
         <div class="wrapper">
@@ -38,28 +37,71 @@
                     <div class="needflex">
                         <div class="items item00 greeting pb0">
                             <div class="item_header container needflex">
-                                <p class="textwrap"><b class="nobullet"><%= userName %>님 안녕하세요</b><span class="gray ells">다양한 활동으로 불교를 경험하세요</span></p>
-                                <button onclick ="location.href='/logout'" class="btn01 noline gray">로그아웃</button>
+                                <p class="textwrap"><b class="nobullet">문수선원님 안녕하세요</b><span class="gray ells">다양한 활동으로 불교를 경험하세요</span></p>
+                                <button class="btn01 noline gray">로그아웃</button>
                             </div>
                         </div>
                         <span class="divider"></span>
                         <div class="items item01 swiperActivity">
                             <div class="item_header container needflex">
-                                <p class="textwrap"><b>교육</b><span class="gray ells">설명란 입니다. 한 줄을 기본으로 하고 넘어갈시 최대 너비 입니다.</span></p>
-                                <!-- <button class="btn01 noline gray arrow_r">더보기</button> -->
+                                <p class="textwrap"><b>교육</b><span class="gray ells">다양한 활동으로 불교를 경험하세요</span></p>
+                                <button class="btn01 noline gray arrow_r">더보기</button>
                             </div>
                             <ul class="swiper-wrapper">
-                                <% subjects.forEach(subject => { %>
-                                    <li class="swiper-slide">
-                                        <a href="/edu_tabpage?subjectId=<%= subject.subjectId %>" class="box radi">
-                                            <img src="../common/images/activity_<%=subject.subjectId%>.jpg" alt="activity_01" />
-                                            <div class="textwrap overview needflex">
-                                                <b><%= subject.subjectName %></b>
-                                                <span><%= subject.subjectDesc %></span>
-                                            </div>
-                                        </a>
-                                    </li>
-                                <% }); %>
+                                <li class="swiper-slide">
+                                    <a href="" class="box radi">
+                                        <img src="../common/images/activity_01.jpg" alt="activity_01" />
+                                        <div class="textwrap overview needflex">
+                                            <b>불교 역사</b>
+                                            <span>쏘댕에서 배우는 불교 역사</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="swiper-slide">
+                                    <a href="" class="box radi">
+                                        <img src="../common/images/activity_02.jpg" alt="activity_02" />
+                                        <div class="textwrap overview needflex">
+                                            <b>불교 미술</b>
+                                            <span>쏘댕에서 배우는 불교 미술</span>
+                                        </div></a
+                                    >
+                                </li>
+                                <li class="swiper-slide">
+                                    <a href="" class="box radi">
+                                        <img src="../common/images/activity_03.jpg" alt="activity_03" />
+                                        <div class="textwrap overview needflex">
+                                            <b>불교 문학</b>
+                                            <span>쏘댕에서 배우는 불교 문학</span>
+                                        </div></a
+                                    >
+                                </li>
+                                <li class="swiper-slide">
+                                    <a href="" class="box radi">
+                                        <img src="../common/images/activity_04.jpg" alt="activity_04" />
+                                        <div class="textwrap overview needflex">
+                                            <b>인문학</b>
+                                            <span>쏘댕에서 배우는 인문학</span>
+                                        </div></a
+                                    >
+                                </li>
+                                <li class="swiper-slide">
+                                    <a href="" class="box radi">
+                                        <img src="../common/images/activity_05.jpg" alt="activity_04" />
+                                        <div class="textwrap overview needflex">
+                                            <b>동양 철학 - 장자</b>
+                                            <span>쏘댕에서 배우는 동양 철학(장자편)</span>
+                                        </div></a
+                                    >
+                                </li>
+                                <li class="swiper-slide">
+                                    <a href="" class="box radi">
+                                        <img src="../common/images/activity_06.jpg" alt="activity_04" />
+                                        <div class="textwrap overview needflex">
+                                            <b>동양 철학 - 노자</b>
+                                            <span>쏘댕에서 배우는 동양 철학(노자편)</span>
+                                        </div></a
+                                    >
+                                </li>
                                 <!-- <li class="swiper-slide">
                                     <a href="" class="box"></a>
                                 </li> -->
@@ -73,12 +115,12 @@
                         <span class="divider"></span>
                         <div class="items item02">
                             <div class="item_header container needflex">
-                                <p class="textwrap"><b>활동</b><span class="gray ells">다양한 활동으로 불교를 경험하세요</span></p>
-                                <button onclick ="location.href='/comingsoon'" class="btn01 noline gray arrow_r">더보기</button>
+                                <p class="textwrap"><b>다양한 활동</b><span class="gray ells">다양한 활동으로 불교를 경험하세요</span></p>
+                                <button class="btn01 noline gray arrow_r">더보기</button>
                             </div>
                             <ul class="edu_con container needflex">
                                 <li>
-                                    <a href="/comingsoon" class="needflex">
+                                    <a href="" class="needflex">
                                         <figure>
                                             <img src="../common/images/edu_01.png" alt="" />
                                         </figure>
@@ -92,7 +134,7 @@
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="/comingsoon" class="needflex">
+                                    <a href="" class="needflex">
                                         <figure>
                                             <img src="../common/images/edu_02.jpg" alt="" />
                                         </figure>
@@ -106,7 +148,7 @@
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="/comingsoon" class="needflex">
+                                    <a href="" class="needflex">
                                         <figure>
                                             <img src="../common/images/edu_03.jpg" alt="" />
                                         </figure>
@@ -120,7 +162,7 @@
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="/comingsoon" class="needflex">
+                                    <a href="" class="needflex">
                                         <figure>
                                             <img src="../common/images/edu_04.jpg" alt="" />
                                         </figure>
@@ -139,11 +181,11 @@
                         <div class="items item03">
                             <div class="item_header container needflex">
                                 <p class="textwrap"><b>쏘댕마켓</b><span class="gray ells">금주의 인기있는 제품들을 만나보세요</span></p>
-                                <button onclick ="location.href='/comingsoon'" class="btn01 noline gray arrow_r">더보기</button>
+                                <button class="btn01 noline gray arrow_r">더보기</button>
                             </div>
                             <ul class="store_con container needflex hide">
                                 <li>
-                                    <a href="/commingsoon" class="box radi">
+                                    <a href="" class="box radi">
                                         <img src="../common/images/storeitem_01.png" alt="" />
                                         <div class="textwrap overview needflex">
                                             <b>남성용 염주</b>
@@ -152,7 +194,7 @@
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="/commingsoon" class="box radi">
+                                    <a href="" class="box radi">
                                         <img src="../common/images/storeitem_02.png" alt="" />
                                         <div class="textwrap overview needflex">
                                             <b>불상</b>
@@ -161,7 +203,7 @@
                                     >
                                 </li>
                                 <li>
-                                    <a href="/commingsoon" class="box radi">
+                                    <a href="" class="box radi">
                                         <img src="../common/images/storeitem_03.png" alt="" />
                                         <div class="textwrap overview needflex">
                                             <b>조각상</b>
@@ -170,7 +212,7 @@
                                     >
                                 </li>
                                 <li>
-                                    <a href="/commingsoon" class="box radi">
+                                    <a href="" class="box radi">
                                         <img src="../common/images/storeitem_04.png" alt="" />
                                         <div class="textwrap overview needflex">
                                             <b>거창유기</b>
@@ -188,6 +230,7 @@
                                 <li class="swiper-slide">
                                     <a href="" class="banneritem banner01">
                                         <span class="hide">배너 01</span>
+                                        <!-- 수령하는 배너이미지 규격화할 것 -->
                                     </a>
                                 </li>
                             </ul>
@@ -213,10 +256,10 @@
                         <div class="footer_bottom">
                             <p class="corp mb10">(주)연꽃이야기</p>
                             <p class="mb30">
-                                <span class="mr20">대표이사&nbsp;</span>
-                                <span>사업자등록번호&nbsp;</span>
+                                <span class="mr20">대표이사&nbsp;자현스님</span>
+                                <span>사업자등록번호&nbsp;120-87-65777</span>
                                 <span class="br"></span>
-                                <span class="mr20">통신판매업&nbsp;&nbsp;</span>
+                                <span class="mr20">통신판매업&nbsp;서울&nbsp;송파-0511</span>
                                 <span>호스팅서비스제공자&nbsp;(주)연꽃이야기</span>
                                 <span class="br"></span>
                                 <span class="mr20">CS@yeonflower.com</span>
@@ -235,23 +278,23 @@
                 </section>
                 <nav class="navbar">
                     <div class="btn_wrap needflex">
-                        <button onclick ="location.href='/comingsoon'" class="nav_btn myPage needflex">
+                        <button class="nav_btn myPage needflex">
                             <span class="bgwrap"></span>
                             <!-- <figure><img src="../common/images/nav_icn_01.png" alt="" /></figure> -->
                             <span>내 정보</span>
                         </button>
-                        <button onclick ="location.href='/comingsoon'" class="nav_btn myFriends needflex">
+                        <button class="nav_btn myFriends needflex">
                             <span class="bgwrap"></span>
                             <!-- <figure><img src="../common/images/nav_icn_02.png" alt="" /></figure> -->
                             <span>친구</span>
                         </button>
-                        <button onclick ="location.href='/home'" class="nav_btn home"></button>
-                        <button onclick ="location.href='/comingsoon'" class="nav_btn myHistory needflex">
+                        <button class="nav_btn home"></button>
+                        <button class="nav_btn myHistory needflex">
                             <span class="bgwrap"></span>
                             <!-- <figure><img src="../common/images/nav_icn_03.png" alt="" /></figure> -->
-                            <span>내강의실</span>
+                            <span>활동내역</span>
                         </button>
-                        <button onclick ="location.href='/comingsoon'" class="nav_btn myCart needflex">
+                        <button class="nav_btn myCart needflex">
                             <span class="bgwrap"></span>
                             <!-- <figure><img src="../common/images/nav_icn_04.png" alt="" /></figure> -->
                             <span>장바구니</span>
@@ -288,7 +331,6 @@
                         loop: true,
                         speed: 400,
                     });
-
                 </script>
             </div>
         </div>
