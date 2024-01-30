@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>내 정보</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f4f4;
+            padding: 20px;
+            text-align: center;
+            margin: 0;
+            color: #333;
+        }
+        .container {
+            max-width: 500px;
+            margin: 30px auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .profile-pic {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background-color: #ddd;
+            margin: 20px auto;
+            display: block;
+            overflow: hidden;
+        }
+        .info {
+            width: 80%;
+            border: 1px black solid;
+            margin: 10px auto;
+            font-size: 16px;
+            text-align: left;
+            font-weight: 500;
+        }
+        .button {
+            display: block;
+            width: 80%;
+            margin: 10px auto;
+            padding: 12px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .button:hover {
+            background-color: #0056b3;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>내 정보</h2>
+        <div class="profile-pic"></div> <!-- 프로필 사진 -->
+        <button class="button">프로필 사진 수정</button>
+
+        <div class="info">이름: <%= name %></div> <!-- 이름 -->
+        <div class="info">연락처: <%= phone %></div> <!-- 연락처 -->
+        <div class="info">이메일: <%= email %></div> <!-- 이메일 -->
+
+        <button class="button">내 정보 수정하기</button>
+        <button class="button">내가 쓴 글, 댓글 관리하기</button>
+        <button class="button">내 강의실</button>
+    </div>
+</body>
+</html>

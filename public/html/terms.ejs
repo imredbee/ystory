@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>약관 동의</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            padding: 20px;
+        }
+        .container {
+            background: white;
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .terms-box {
+            height: 300px;
+            border: 1px solid #ddd;
+            overflow-y: scroll;
+            margin-bottom: 20px;
+            padding: 10px;
+        }
+        .agree {
+            margin-bottom: 20px;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>서비스 이용 약관</h2>
+        <div class="terms-box">
+            <!-- 약관 내용 -->
+            <p>여기에 약관 내용을 적습니다...</p>
+            <!-- 약관 내용 계속 -->
+        </div>
+        <form action="/terms_agree" method="post">
+            <div class="agree">
+                <input type="checkbox" id="agree" name="agree" required>
+                <label for="agree">약관에 동의합니다.</label>
+            </div>
+            <button type="submit">동의하고 계속하기</button>
+        </form>
+    </div>
+</body>
+</html>

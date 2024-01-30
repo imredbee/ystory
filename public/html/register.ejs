@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>회원가입</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        form {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        input[type="email"],
+        input[type="password"],
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box; /* 추가된 내용 */
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <h2>회원가입</h2>
+    <form id="registerForm" >
+        <input type="email" name="email" placeholder="이메일" required>
+        <input type="password" name="password" placeholder="비밀번호" required>
+        <input type="password" name="confirmPassword" placeholder="비밀번호 확인" required>
+        <input type="text" name="name" placeholder="이름" required>
+        <input type="text" name="contact" placeholder="연락처" required>
+        <input type="text" name="nickname" placeholder="법명" required>
+        <button type="submit">회원가입</button>
+    </form>
+
+    <script>
+        document.getElementById('registerForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const formData = new FormData(this);
+            const data = {}; // formData를 객체로 변환하여 저장할 변수
+
+            formData.forEach((value, key) => {
+                data[key] = value; // formData의 각 항목을 data 객체에 추가
+            });
+
+            fetch('/register', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(data), // 객체를 JSON 문자열로 변환
+            })
+            .then(response => response.json())
+            .then(data => {
+                alert(data.message); // 응답 메시지 표시
+                window.location.href = data.redirect; // 리디렉션
+            })
+            .catch((error) => {
+                console.error('Error:', error);
+            });
+        });
+
+
+    </script>
+</body>
+</html>

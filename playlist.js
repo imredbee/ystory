@@ -68,9 +68,9 @@ async function getPlaylistVideos(playlistId, apiKey) {
 
 
 
-const playlistId = 'PLOgX7DLM4hnZqUE9jvjrv3I2wSmesSLwG'; // 재생목록 ID
+const playlistId = 'PLOgX7DLM4hnYd1H51Wtb48Q08AD-tRHab'; // 재생목록 ID
 const apiKey = 'AIzaSyAxJPkjMIDMAj8Fv2OfeVTovnKUw9L-Rn8'; // API 키
-const subjectId = 3; // 과목의 subjectId
+const subjectId = 4; // 과목의 subjectId
 
 getPlaylistVideos(playlistId, apiKey)
     .then(videos => {
